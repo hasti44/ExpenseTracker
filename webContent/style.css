@@ -75,10 +75,4 @@ a:hover {
     margin-right: 10px;
 }
 
-/* Success Message (Hidden by Default) */
-.success-message {
-    color: green;
-    font-size: 14px;
-    display: none;
-    margin-top: 10px;
-}
+
