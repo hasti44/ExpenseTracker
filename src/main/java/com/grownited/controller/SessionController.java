@@ -1,20 +1,33 @@
-
 package com.grownited.controller;
 
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestBody;
+
+
 
 @Controller
 public class SessionController {
 
-	@GetMapping("signup")
+	@GetMapping(value={"signup","/"})//name in url
 	public String signup() {
 		//
-		return "SignUp"; // jsp Name
+		return "Signup"; // signup jsp Name
 	}
 
-	@GetMapping("login")
+	@GetMapping("login")//name in url
 	public String login() {
-		return "LogIn";
+		return "Login"; //login jsp name
+	} 
+	@PostMapping("saveuser")
+	public String saveUser() {
+		return "Login";
 	}
+	
+	@GetMapping("fp")//name in url
+	public String fp() {
+		return "ForgotPassword"; //login jsp name
+	} 
 }
