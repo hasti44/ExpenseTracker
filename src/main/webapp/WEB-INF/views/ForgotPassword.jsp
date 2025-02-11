@@ -80,7 +80,7 @@
 	        <div class="form-box">
 	            <h2>Reset Password</h2>
 	            <p>Enter your registered email to receive a password reset link.</p>
-	            <form id="forgot-form" method="post" >
+	            <form id="forgot-form" method="post" action="sendOTP">
 	                <input type="email" id="reset-email" placeholder="Enter Email" required>
 	                <button type="submit">Send Reset Link</button>
 	            </form>

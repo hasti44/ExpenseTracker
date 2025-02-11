@@ -4,11 +4,10 @@
 <html>
 	<head>
 		<meta charset="UTF-8">
-		<title>sign up page</title>
-		<!-- <link rel="stylesheet" href="/webContent/style.css"> -->
+		<title>reset password</title>
 	</head>
 	<style>
-	  	body {
+		body {
 		    font-family: Arial, sans-serif;
 		    background: linear-gradient(to right, #6a11cb, #2575fc);
 		    display: flex;
@@ -16,7 +15,8 @@
 		    align-items: center;
 		    height: 100vh;
 		    margin: 0;
-		}	
+		}
+		
 		.container {
 		    width: 100%;
 		    max-width: 400px;
@@ -29,6 +29,10 @@
 		
 		h2 {
 		    margin-bottom: 20px;
+		}
+		
+		p {
+		    font-size: 14px;
 		}
 		
 		input {
@@ -54,8 +58,9 @@
 		    background: #2575fc;
 		}
 		
-		p {
-		    margin-top: 10px;
+		.forgot-password {
+		    text-align: right;
+		    margin-right: 10px;
 		}
 		
 		a {
@@ -67,24 +72,23 @@
 		a:hover {
 		    text-decoration: underline;
 		}
-			
+	
 	</style>
-
+	
 	<body>
 	    <div class="container">
 	        <div class="form-box">
-	            <h2>Sign Up</h2>
-	            <form id="signup-form" method="post" action="saveUser">
-	                <input type="text" id="firstname" placeholder="Firstname" required>
-	                <input type="text" id="lastname" placeholder="Lastname" required>
+	            <h2>Reset Password</h2>
+	            <p>Enter your registered email to receive a password reset link.</p>
+	            <form id="forgot-form" method="post" action="updatePassword">
 	                <input type="email" id="email" placeholder="Email" required>
 	                <input type="password" id="password" placeholder="Password" required>
 	                <input type="password" id="confirm-password" placeholder="Confirm Password" required>
 	                
-	                <button type="submit">Sign Up</button>
+	                <button type="submit"> Reset password</button>
 	            </form>
-	            <p>Already have an account? <a href="login">Login</a></p>
+	            <p><a href="login">Back to Login</a></p>
 	        </div>
-	    </div>	
+	    </div>
 	</body>
 </html>

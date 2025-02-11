@@ -21,13 +21,30 @@ public class SessionController {
 	public String login() {
 		return "Login"; //login jsp name
 	} 
-	@PostMapping("saveuser")
-	public String saveUser() {
-		return "Login";
-	}
 	
 	@GetMapping("fp")//name in url
 	public String fp() {
 		return "ForgotPassword"; //login jsp name
 	} 
+	
+	@PostMapping("saveuser")
+	public String saveUser() {
+		return "Login";
+	}
+	
+	@PostMapping("resetPassword")
+	public String resetPassword() {
+		return "resetPassword";
+	}
+	
+	@PostMapping("updatePassword")
+	public String updatePassword() {
+		return "Login";
+	}
+	@PostMapping("sendOTP")
+	public String sendOTP() {
+		return "changePassword";
+	}
+	
+	
 }
