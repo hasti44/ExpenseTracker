@@ -81,7 +81,8 @@
 	            <h2>Reset Password</h2>
 	            <p>Enter your registered email to receive a password reset link.</p>
 	            <form id="forgot-form" method="post" action="updatePassword">
-	                <input type="email" id="email" placeholder="Email" required>
+	                
+	                <input type="text" id="OTP" placeholder="OTP" required>
 	                <input type="password" id="password" placeholder="Password" required>
 	                <input type="password" id="confirm-password" placeholder="Confirm Password" required>
 	                

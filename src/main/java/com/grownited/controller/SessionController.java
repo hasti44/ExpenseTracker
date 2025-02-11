@@ -34,16 +34,13 @@ public class SessionController {
 	
 	@PostMapping("resetPassword")
 	public String resetPassword() {
-		return "resetPassword";
-	}
-	
-	@PostMapping("updatePassword")
-	public String updatePassword() {
 		return "Login";
 	}
+	
+	
 	@PostMapping("sendOTP")
 	public String sendOTP() {
-		return "changePassword";
+		return "resetPassword";
 	}
 	
 	
