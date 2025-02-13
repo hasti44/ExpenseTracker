@@ -12,6 +12,7 @@ public class UserEntity {//users table
 	private Integer userId;
 	private String firstName;
 	private String lastName;
+	private String gender;
 	private String email;
 	private String password;
 	private String contactNo;
@@ -28,17 +29,25 @@ public class UserEntity {//users table
 	public void setUserId(Integer userId) {
 		this.userId = userId;
 	}
+	
 	public String getFirstName() {
 		return firstName;
 	}
 	public void setFirstName(String firstName) {
 		this.firstName = firstName;
 	}
+	
 	public String getLastName() {
 		return lastName;
 	}
 	public void setLastName(String lastName) {
 		this.lastName = lastName;
+	}
+	public String getGender() {
+		return gender;
+	}
+	public void setGender(String gender) {
+		this.gender = gender;
 	}
 	public String getEmail() {
 		return email;
@@ -71,10 +80,13 @@ public class UserEntity {//users table
 		this.bornYear = bornYear;
 	}
 	public String getRole() {
-		return bornYear;
+		return role;
 	}
 	public void setRole(String role) {
 		this.role = role;
 	}
+	
+	
+	
 	
 }

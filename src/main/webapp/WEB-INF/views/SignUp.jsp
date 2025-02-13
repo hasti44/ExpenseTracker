@@ -10,29 +10,32 @@
 	<style>
 	  	body {
 		    font-family: Arial, sans-serif;
-		    background: linear-gradient(to right, #6a11cb, #2575fc);
 		    display: flex;
 		    justify-content: center;
 		    align-items: center;
 		    height: 100vh;
+		    background-color: #f4f4f4;
 		    margin: 0;
-		}	
-		.container {
-		    width: 100%;
-		    max-width: 400px;
+		}
+		
+		.form-box {
 		    background: white;
 		    padding: 20px;
 		    border-radius: 10px;
-		    text-align: center;
 		    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+		    width: 300px;
+		    text-align: center;
 		}
 		
 		h2 {
 		    margin-bottom: 20px;
+		    color: #333;
 		}
 		
-		input {
-		    width: 90%;
+		input[type="text"],
+		input[type="email"],
+		input[type="password"] {
+		    width: 100%;
 		    padding: 10px;
 		    margin: 10px 0;
 		    border: 1px solid #ccc;
@@ -40,33 +43,38 @@
 		}
 		
 		button {
-		    width: 100%;
-		    padding: 10px;
-		    background: #6a11cb;
+		    background-color: #28a745;
 		    color: white;
+		    padding: 10px;
 		    border: none;
 		    border-radius: 5px;
+		    width: 100%;
 		    cursor: pointer;
 		    font-size: 16px;
 		}
 		
 		button:hover {
-		    background: #2575fc;
+		    background-color: #218838;
 		}
 		
 		p {
-		    margin-top: 10px;
+		    margin-top: 15px;
+		    font-size: 14px;
 		}
 		
-		a {
-		    color: #6a11cb;
+		p a {
+		    color: #007bff;
 		    text-decoration: none;
-		    font-weight: bold;
 		}
 		
-		a:hover {
+		p a:hover {
 		    text-decoration: underline;
 		}
+		
+		input[type="radio"] {
+		    margin: 0 5px;
+		}
+
 			
 	</style>
 
@@ -75,11 +83,14 @@
 	        <div class="form-box">
 	            <h2>Sign Up</h2>
 	            <form id="signup-form" method="post" action="saveUser">
-	                <input type="text" id="firstname" placeholder="Firstname" required>
-	                <input type="text" id="lastname" placeholder="Lastname" required>
-	                <input type="email" id="email" placeholder="Email" required>
-	                <input type="password" id="password" placeholder="Password" required>
-	                <input type="password" id="confirm-password" placeholder="Confirm Password" required>
+	                <input type="text" name="firstName" placeholder="FirstName" required>
+	                <input type="text" name="lastName" placeholder="LastName" required>
+	                 Gender: 
+	                <input type="radio" id="male" name="gender" value="male">Male
+					<input type="radio" id="female" name="gender" value="female">Female
+					<input type="email" name="email" placeholder="Email" required>
+	                <input type="password" name="password" placeholder="Password" required>
+	                <input type="password" name="confirm-password" placeholder="Confirm Password" required>
 	                
 	                <button type="submit">Sign Up</button>
 	            </form>
