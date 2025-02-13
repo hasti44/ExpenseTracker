@@ -23,11 +23,7 @@ public class CategoryController {
 		//
 		return "addCategory"; // signup jsp Name
 	}
-	@GetMapping("addExpense")//name in url
-	public String addExpense() {
-		//
-		return "addExpense"; // signup jsp Name
-	}
+	
 	
 	@PostMapping("saveCategory")//name in url
 	public String saveCategory(CategoryEntity categoryEntity) {

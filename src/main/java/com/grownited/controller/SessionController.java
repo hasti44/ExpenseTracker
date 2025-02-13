@@ -17,13 +17,13 @@ public class SessionController {
 	UserRepository repoUser; 
 
 
-	@GetMapping(value={"signup","/"})//name in url
+	@GetMapping("signup")//name in url
 	public String signup() {
 		//
 		return "Signup"; // signup jsp Name
 	}
 
-	@GetMapping("login")//name in url
+	@GetMapping(value={"login","/"})//name in url
 	public String login() {
 		System.out.println("authentictae user.");
 		return "Login"; //login jsp name
