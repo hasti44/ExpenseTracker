@@ -5,18 +5,19 @@ import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 //import org.springframework.web.bind.annotation.RequestParam;
+//import org.springframework.web.bind.annotation.RequestBody;
 
 import com.grownited.entity.CategoryEntity;
 import com.grownited.repository.CategoryRepository;
 
 
-//import org.springframework.web.bind.annotation.RequestBody;
 
 @Controller
 public class CategoryController {
 	
 	@Autowired
 	CategoryRepository repoCategory; 
+	 
 
 	@GetMapping("addCategory")//name in url
 	public String addCategory() {
@@ -32,8 +33,8 @@ public class CategoryController {
         // Process the data (e.g., save to database)
 		
 		repoCategory.save(categoryEntity);
-	    System.out.println("category added: " + categoryEntity.getCategory() );
+	    System.out.println("category added: " + categoryEntity.getTitle() );
 		
-		return "addCategory"; // signup jsp Name
+		return "Home"; // signup jsp Name
 	}
 }

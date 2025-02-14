@@ -42,7 +42,10 @@
                 <li><a href="#">Dashboard</a></li>
                 <li><a href="addExpense">Add Expense</a></li>
                 <li><a href="addCategory">Add Category</a></li>
-                <li><a href="#">Logout</a></li>
+                <li><a href="addSubCategory">Add SubCategory</a></li>
+                <li><a href="addIncome">Add Income</a></li>
+                <li><a href="addAccount">Add Account</a></li>
+                <li><a href="login">Logout</a></li>
             </ul>
         </nav>
     </header>

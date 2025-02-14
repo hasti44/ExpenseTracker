@@ -1,10 +1,12 @@
 package com.grownited.controller;
 
+import java.time.LocalDateTime;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
-//import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.PostMapping;
+//import org.springframework.web.bind.annotation.RequestParam;
 //import org.springframework.web.bind.annotation.RequestBody;
 
 import com.grownited.entity.UserEntity;
@@ -35,17 +37,17 @@ public class SessionController {
 	} 
 	
 	@PostMapping("saveUser")
-	public String saveUser(UserEntity userEntity) {
+	public String saveUser(UserEntity entityUser) {
 		System.out.println("validation and db insertion.....");
 		
-		System.out.println(userEntity.getFirstName());
-		System.out.println(userEntity.getLastName());
-		System.out.println(userEntity.getGender());
-		System.out.println(userEntity.getEmail());
-		System.out.println(userEntity.getPassword());
-		
-		
-		repoUser.save(userEntity);
+		System.out.println(entityUser.getFirstName());
+		System.out.println(entityUser.getLastName());
+		System.out.println(entityUser.getEmail());
+		entityUser.setRole("USER");
+		entityUser.setActive(true);
+		System.out.println(entityUser.getRole());
+		entityUser.setCreatedAt(LocalDateTime.now());
+		repoUser.save(entityUser);
 		return "Login";
 	}
 	

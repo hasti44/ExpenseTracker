@@ -1,5 +1,8 @@
 package com.grownited.entity;
 
+import java.time.LocalDateTime;
+
+import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.Table;
 import jakarta.persistence.GeneratedValue;
@@ -12,13 +15,12 @@ public class UserEntity {//users table
 	private Integer userId;
 	private String firstName;
 	private String lastName;
-	private String gender;
 	private String email;
 	private String password;
-	private String contactNo;
 	private String city;
-	private String bornYear;
+	private LocalDateTime createdAt;
 	private String role;
+	private boolean isActive;
 	
 	
 	@Id
@@ -43,12 +45,8 @@ public class UserEntity {//users table
 	public void setLastName(String lastName) {
 		this.lastName = lastName;
 	}
-	public String getGender() {
-		return gender;
-	}
-	public void setGender(String gender) {
-		this.gender = gender;
-	}
+	
+	@Column(unique = true)
 	public String getEmail() {
 		return email;
 	}
@@ -61,23 +59,19 @@ public class UserEntity {//users table
 	public void setPassword(String password) {
 		this.password = password;
 	}
-	public String getContactNo() {
-		return contactNo;
-	}
-	public void setContactNo(String contactNo) {
-		this.contactNo = contactNo;
-	}
+	
 	public String getCity() {
 		return city;
 	}
 	public void setCity(String city) {
 		this.city = city;
 	}
-	public String getBornYear() {
-		return bornYear;
+	
+	public LocalDateTime getCreatedAt() {
+		return createdAt;
 	}
-	public void setBornYear(String bornYear) {
-		this.bornYear = bornYear;
+	public void setCreatedAt(LocalDateTime createdAt) {
+		this.createdAt = createdAt;
 	}
 	public String getRole() {
 		return role;
@@ -85,7 +79,12 @@ public class UserEntity {//users table
 	public void setRole(String role) {
 		this.role = role;
 	}
-	
+	public boolean isActive() {
+		return isActive;
+	}
+	public void setActive(boolean isActive) {
+		this.isActive = isActive;
+	}
 	
 	
 	

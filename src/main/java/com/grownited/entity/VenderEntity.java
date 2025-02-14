@@ -1,26 +1,25 @@
 package com.grownited.entity;
 
 import jakarta.persistence.Entity;
-import jakarta.persistence.Table;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
+import jakarta.persistence.Table;
 
 @Entity
-@Table(name="categories")
-public class CategoryEntity {
-	
-	private Integer categoryId;
+@Table(name="vender")
+public class VenderEntity {
+	private Integer venderId;
 	private String title;
 	private Integer userId;
 	
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
-	public Integer getCategoryId() {
-		return categoryId;
+	public Integer getVenderId() {
+		return venderId;
 	}
-	public void setCategoryId(Integer categoryId) {
-		this.categoryId = categoryId;
+	public void setVenderId(Integer venderId) {
+		this.venderId = venderId;
 	}
 	public String getTitle() {
 		return title;
@@ -34,6 +33,5 @@ public class CategoryEntity {
 	public void setUserId(Integer userId) {
 		this.userId = userId;
 	}
-		
 	
 }
