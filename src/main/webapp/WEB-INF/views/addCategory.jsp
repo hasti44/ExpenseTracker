@@ -14,7 +14,7 @@
 <body>
     <h2>Manage Categories</h2>
     <form action="saveCategory" method="post">
-        <input type="text" placeholder="title" required>
+        <input type="text" placeholder="title" name="title" required>
         <button type="submit">Add Category</button>
     </form>
 </body>

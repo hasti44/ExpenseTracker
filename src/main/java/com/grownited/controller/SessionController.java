@@ -33,7 +33,7 @@ public class SessionController {
 	
 	@GetMapping("fp")//name in url
 	public String fp() {
-		return "ForgotPassword"; //login jsp name
+		return "ForgotPassword"; // jsp name
 	} 
 	
 	@PostMapping("saveUser")
