@@ -11,13 +11,15 @@ import org.springframework.web.bind.annotation.PostMapping;
 
 import com.grownited.entity.UserEntity;
 import com.grownited.repository.UserRepository;
+import com.grownited.service.MailService;
 
 @Controller
 public class SessionController {
 	
 	@Autowired
 	UserRepository repoUser; 
-
+	@Autowired
+	MailService serviceMail;
 
 	@GetMapping("signup")//name in url
 	public String signup() {
@@ -36,18 +38,23 @@ public class SessionController {
 		return "ForgotPassword"; // jsp name
 	} 
 	
+	
+	//sign up 
 	@PostMapping("saveUser")
 	public String saveUser(UserEntity entityUser) {
 		System.out.println("validation and db insertion.....");
 		
 		System.out.println(entityUser.getFirstName());
-		System.out.println(entityUser.getLastName());
 		System.out.println(entityUser.getEmail());
 		entityUser.setRole("USER");
 		entityUser.setActive(true);
-		System.out.println(entityUser.getRole());
+		
 		entityUser.setCreatedAt(LocalDateTime.now());
 		repoUser.save(entityUser);
+		
+		//send mail to user
+		//serviceMail.sendWelcomeMail(entityUser.getEmail(), entityUser.getFirstName());
+
 		return "Login";
 	}
 	

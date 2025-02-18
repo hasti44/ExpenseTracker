@@ -19,13 +19,11 @@ import com.grownited.repository.ExpenseRepository;
 import com.grownited.repository.IncomeRepository;
 import com.grownited.repository.SubCategoryRepository;
 
-
-
 @Controller
 public class ExpenseController {
 	
 //====================================================================================================================================================	 
-//===============================================category controll====================================================================================
+//===============================================category controller==================================================================================
 //====================================================================================================================================================	 
 	@Autowired
 	CategoryRepository repoCategory; 
@@ -46,7 +44,7 @@ public class ExpenseController {
 		repoCategory.save(categoryEntity);
 	    System.out.println("category added: " + categoryEntity.getTitle() );
 		
-		return "Home"; // jsp Name
+		return "redirect:/listCategory"; // jsp Name
 	}
 	
 	@GetMapping("listCategory")//name in url
@@ -62,7 +60,7 @@ public class ExpenseController {
 		return "listCategory"; //login jsp name
 	}
 //====================================================================================================================================================	 
-//===============================================expense controll====================================================================================
+//===============================================expense controller===================================================================================
 //====================================================================================================================================================	 
 	@Autowired
 	ExpenseRepository repoExpense; 
@@ -79,7 +77,7 @@ public class ExpenseController {
 		repoExpense.save(expenseEntity);
 		System.out.println("new expense details and db insertion.... ");
 		
-		return "Home"; // jsp Name
+		return "redirect:/listExpense"; // jsp Name
 	}
 	
 	@GetMapping("listExpense")//name in url
@@ -93,7 +91,7 @@ public class ExpenseController {
 	}
 	
 //====================================================================================================================================================	 
-//===============================================income controll====================================================================================	
+//===============================================income controller====================================================================================	
 //====================================================================================================================================================	 
 	@Autowired
 	IncomeRepository repoIncome;
@@ -110,7 +108,7 @@ public class ExpenseController {
 		repoIncome.save(incomeEntity);
 		System.out.println("new income details and db insertion.... ");
 		
-		return "Home"; // jsp Name
+		return "redirect:/listIncome"; // jsp Name
 	}
 	
 	@GetMapping("listIncome")//name in url
@@ -126,7 +124,7 @@ public class ExpenseController {
 		return "listIncome"; //login jsp name
 	}
 //====================================================================================================================================================	 
-//===============================================account controll====================================================================================	
+//===============================================account controller===================================================================================	
 //====================================================================================================================================================	 
 	@Autowired
 	AccountRepository repoAccount;
@@ -143,7 +141,7 @@ public class ExpenseController {
 		repoAccount.save(accountEntity);
 		System.out.println("new Account details and db insertion.... ");
 		
-		return "Home"; // jsp Name
+		return "redirect:/listAccount"; // jsp Name
 	}
 	
 	@GetMapping("listAccount")//name in url
@@ -159,7 +157,7 @@ public class ExpenseController {
 		return "listAccount"; //login jsp name
 	}
 //====================================================================================================================================================	 
-//===============================================Sub Category controll====================================================================================
+//===============================================Sub Category controller==============================================================================
 //====================================================================================================================================================	 
 	@Autowired
 	SubCategoryRepository repoSubCategory;
@@ -174,12 +172,11 @@ public class ExpenseController {
 	public String saveSubCategory(SubCategoryEntity subCategoryEntity ) {
 		System.out.println(subCategoryEntity.getTitle());
 		System.out.println(subCategoryEntity.getCategoryId());
-		System.out.println(subCategoryEntity);
-
+		
 		System.out.println("new subCategory details and db insertion.... ");
 		repoSubCategory.save(subCategoryEntity);
 		
-		return "Home"; // jsp Name
+		return "redirect:/listSubCategory"; // jsp Name
 	}
 	
 	@GetMapping("listSubCategory")//name in url

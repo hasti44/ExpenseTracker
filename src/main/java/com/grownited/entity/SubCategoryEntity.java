@@ -12,7 +12,7 @@ public class SubCategoryEntity {
 	private Integer subCategoryId;
 	private String title;
 	private Integer categoryId;
-	private Integer userid;
+	private Integer userId;
 	
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -34,11 +34,11 @@ public class SubCategoryEntity {
 	public void setCategoryId(Integer categoryId) {
 		this.categoryId = categoryId;
 	}
-	public Integer getUserid() {
-		return userid;
+	public Integer getUserId() {
+		return userId;
 	}
-	public void setUserid(Integer userid) {
-		this.userid = userid;
+	public void setUserId(Integer userId) {
+		this.userId = userId;
 	}
 	
 }

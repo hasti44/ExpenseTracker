@@ -11,7 +11,7 @@ import jakarta.persistence.Table;
 public class VenderEntity {
 	private Integer venderId;
 	private String title;
-	private Integer userId;
+	private Integer userId;//fk
 	
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
