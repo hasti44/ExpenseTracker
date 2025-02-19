@@ -17,7 +17,7 @@ public class MailService {
 				+ "Welcome to Expense Tracker! We're excited to help you manage your expenses effortlessly. Get started by logging in and tracking your first expense today!\r\n"
 				+ "\r\n"
 				+ "Happy saving!\r\n";
-		String from="abc123@gmail.com";
+		String from="hastijiyani04@gmail.com";
 		
         SimpleMailMessage message = new SimpleMailMessage();
         message.setTo(email);
