@@ -12,6 +12,10 @@ public class ExpenseTrackerApplication {
 	public static void main(String[] args) {
 		SpringApplication.run(ExpenseTrackerApplication.class, args);
 	}
+<<<<<<< HEAD
+=======
+	
+>>>>>>> 3e14a45d6ba8faa9c90502b588eb872969ca31d3
 	@Bean   //it makes it a singleton
 	PasswordEncoder encoder() {
 		return new BCryptPasswordEncoder(5);
