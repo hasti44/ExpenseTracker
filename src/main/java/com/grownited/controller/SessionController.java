@@ -30,14 +30,12 @@ public class SessionController {
 		//
 		return "Signup"; // signup jsp Name
 	}
-<<<<<<< HEAD
+
 	@GetMapping("Home")//name in url
 	public String Home() {
 		//
 		return "Home"; // signup jsp Name
 	}
-=======
->>>>>>> 3e14a45d6ba8faa9c90502b588eb872969ca31d3
 
 	@GetMapping(value={"login","/"})//name in url
 	public String login() {

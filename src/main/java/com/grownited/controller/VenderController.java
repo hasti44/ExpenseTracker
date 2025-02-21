@@ -1,6 +1,5 @@
 package com.grownited.controller;
 
-<<<<<<< HEAD
 import java.util.List;
 import java.util.Optional;
 
@@ -64,8 +63,4 @@ public class VenderController {
 		repoVender.deleteById(venderId);
 		return "redirectct:/listVender";
 	}
-=======
-public class VenderController {
-
->>>>>>> 3e14a45d6ba8faa9c90502b588eb872969ca31d3
 }
