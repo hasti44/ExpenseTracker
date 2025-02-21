@@ -5,10 +5,10 @@
 <html>
 <head>
 	<meta charset="UTF-8">
-	<title>Sub Categories</title>
+	<title>Incomes </title>
 	</head>
 	<body align="center">
-		<h1>Sub Category List</h1>
+		<h1>Incomes  List</h1>
 		<table border=3 align="center">
 			<tr>
 				<th>Income Id</th>
@@ -16,6 +16,7 @@
 				<th>Amount</th>
 				<th>Description</th>
 				<th>Transaction Date</th>
+				<th>Action</th>
 			</tr> 
 			<c:forEach items="${incomeList}" var="i">
 					<tr>
@@ -24,6 +25,9 @@
 						<td>${i.title }</td>
 						<td>${i.description }</td>
 						<td>${i.transactionDate }</td>
+						<td><a href="viewIncome?incomeId=${i.incomeId}"> view </a> | 	
+							<a href="deleteIncome?incomeId=${i.incomeId}"> delete </a> |
+							<a href="editIncome?incomeId=${i.incomeId}"> edit </a> </td>
 					</tr> 
 			</c:forEach>
 		</table>

@@ -1,6 +1,7 @@
 package com.grownited.controller;
 
 import java.time.LocalDateTime;
+import java.util.Optional;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.crypto.password.PasswordEncoder;
@@ -32,7 +33,6 @@ public class SessionController {
 
 	@GetMapping(value={"login","/"})//name in url
 	public String login() {
-		System.out.println("authentictae user.");
 		return "Login"; //login jsp name
 	} 
 	
@@ -77,8 +77,17 @@ public class SessionController {
 		return "resetPassword";
 	}
 	@PostMapping("authenticate")
-	public String authenticate() {
-		return "Home";
+	public String authenticate( String email,String password ) {
+		System.out.print("authentictae user: " + email);
+		Optional<UserEntity> op = repoUser.findByEmail(email);
+		if(op.isEmpty()) {
+			//no user found
+		}else {
+			UserEntity user =op.get();
+			if(encoder.matches(password, user.getPassword())) return "Home";
+		}
+		
+		return "Login";
 	}
 	
 	

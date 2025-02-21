@@ -5,10 +5,10 @@
 <html>
 <head>
 	<meta charset="UTF-8">
-	<title>Sub Categories</title>
+	<title>Accounts</title>
 	</head>
 	<body align="center">
-		<h1>Sub Category List</h1>
+		<h1>Account List</h1>
 		<table border=3 align="center">
 			<tr>
 				<th>Account Id</th>
@@ -16,16 +16,19 @@
 				<th>Title</th>
 				<th>Description</th>
 				<th>Transaction Date</th>
+				<th>Action</th>
 				
 			</tr> 
-			<c:forEach items="${expenseList}" var="i">
+			<c:forEach items="${accountList}" var="i">
 					<tr>
 						<td>${i.accountId }</td>
 						<td>${i.amount }</td>
 						<td>${i.title }</td>
 						<td>${i.description }</td>
 						<td>${i.transactionDate }</td>
-						
+						<td><a href="viewAccount?accountId=${i.accountId}"> view </a> | 	
+							<a href="deleteAccount?accountId=${i.accountId}"> delete </a> |
+							<a href="editAccount?accountId=${i.accountId}"> edit </a> </td>
 					</tr> 
 			</c:forEach>
 		</table>

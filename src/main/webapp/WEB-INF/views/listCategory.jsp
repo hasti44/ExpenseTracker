@@ -13,11 +13,15 @@
 			<tr>
 				<th>Category Id</th>
 				<th>Title</th>
+				<th>Action</th>
 			</tr> 
 			<c:forEach items="${categoryList}" var="i">
 					<tr>
 						<td>${i.categoryId}</td>
 						<td>${i.title }</td>
+						<td><a href="viewCategory?categoryId=${i.categoryId}"> view </a> | 	
+							<a href="deleteCategory?categoryId=${i.categoryId}"> delete </a> |
+							<a href="editCategory?categoryId=${i.categoryId}"> edit </a> </td>
 					</tr> 
 			</c:forEach>
 		</table>

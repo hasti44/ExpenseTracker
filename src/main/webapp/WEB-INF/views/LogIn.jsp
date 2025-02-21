@@ -78,9 +78,10 @@
 	    <div class="container">
 	        <div class="form-box">
 	            <h2 id="form-title">Login</h2>
+	            
 	            <form id="auth-form" method="post" action="authenticate">
-	                <input type="text" id="username" placeholder="Username" required>
-	                <input type="password" id="password" placeholder="Password" required>
+	                <input type="email" name="email" placeholder="Email" required>
+	                <input type="password" name="password" placeholder="Password" required>
 	                
 	                <p class="forgot-password">
 	                    <a href="fp" id="forgot-link">Forgot Password?</a>
