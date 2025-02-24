@@ -19,31 +19,4 @@
     
 		
 	</body>
-	<style>
-        body {
-            font-family: Arial, sans-serif;
-            margin: 20px;
-            padding: 20px;
-            background-color: #f4f4f4;
-        }
-        h2 {
-            color: #333;
-        }
-        form {
-           
-		    background: white;
-		    padding: 20px;
-		    border-radius: 10px;
-		    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-		    width: 300px;
-		    text-align: center;
-		
-        }
-        input, textarea {
-            margin: 10px 0;
-            padding: 8px;
-            width: 100%;
-        }
-        
-    </style>
 </html>
