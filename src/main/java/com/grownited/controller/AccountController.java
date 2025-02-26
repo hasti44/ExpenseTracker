@@ -38,7 +38,7 @@ public class AccountController {
 		List<AccountEntity> accountList = repoAccount.findAll();//retrive data from DB
 		
 		//controller to jsp
-		model.addAttribute("AccountList", accountList);//("dataname",datavalue)
+		model.addAttribute("accountList", accountList);//("dataname",datavalue)
 		System.out.println(accountList.get(0).getTitle());                                 
 		
 		return "listAccount"; //login jsp name

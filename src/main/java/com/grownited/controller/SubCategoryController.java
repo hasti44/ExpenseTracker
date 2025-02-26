@@ -9,16 +9,26 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 
+import com.grownited.entity.CategoryEntity;
 import com.grownited.entity.SubCategoryEntity;
+import com.grownited.repository.CategoryRepository;
 import com.grownited.repository.SubCategoryRepository;
 
 @Controller
 public class SubCategoryController {
 	@Autowired
 	SubCategoryRepository repoSubCategory;
+	@Autowired
+	CategoryRepository repoCategory;
 	
 	@GetMapping("addSubCategory")//name in url
-	public String addSubCategory() {
+	public String addSubCategory(Model model) {
+		List<CategoryEntity> categoryList = repoCategory.findAll();//retrive data from DB
+		
+		//controller to jsp
+		model.addAttribute("categoryList", categoryList);//("dataname",datavalue)
+		
+		System.out.println(categoryList.get(0).getTitle());                                
 
 		return "addSubCategory"; // jsp Name
 	}

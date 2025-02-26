@@ -1,7 +1,5 @@
 package com.grownited.entity;
 
-import java.time.LocalDateTime;
-
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
@@ -16,7 +14,7 @@ public class IncomeEntity {
 	private Integer accountId;
 	//status
 	private float amount;
-	private LocalDateTime transactionDate;
+	private String transactionDate;
 	private String description;
 	private Integer userId;
 	
@@ -46,10 +44,10 @@ public class IncomeEntity {
 	public void setAmount(float amount) {
 		this.amount = amount;
 	}
-	public LocalDateTime getTransactionDate() {
+	public String getTransactionDate() {
 		return transactionDate;
 	}
-	public void setTransactionDate(LocalDateTime transactionDate) {
+	public void setTransactionDate(String transactionDate) {
 		this.transactionDate = transactionDate;
 	}
 	public String getDescription() {

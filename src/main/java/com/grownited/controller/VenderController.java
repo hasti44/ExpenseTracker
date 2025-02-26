@@ -28,19 +28,19 @@ public class VenderController {
 	
 		repoVender.save(venderEntity);
 		System.out.println("new Vender details and db insertion.... ");
-		
+		System.out.println(venderEntity.getTitle());
 		return "redirect:/listVender"; // jsp Name
 	}
 	
 	@GetMapping("listVender")//name in url
 	public String listVender(Model model ) {
 		
-		List<VenderEntity> VenderList = repoVender.findAll();//retrive data from DB
+		List<VenderEntity> venderList = repoVender.findAll();//retrive data from DB
 		
 		//controller to jsp
-		model.addAttribute("VenderList", VenderList);//("dataname",datavalue)
+		model.addAttribute("venderList", venderList);//("dataname",datavalue)
 		
-		System.out.println(VenderList.get(0).getTitle());                                 
+		System.out.println(venderList.get(0).getTitle());                                 
 		
 		return "listVender"; //login jsp name
 	}
@@ -61,6 +61,6 @@ public class VenderController {
 	public String deleteVender(Integer venderId) {
 		System.out.println(venderId);
 		repoVender.deleteById(venderId);
-		return "redirectct:/listVender";
+		return "redirect:/listVender";
 	}
 }

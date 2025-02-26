@@ -41,6 +41,7 @@ public class AccountEntity {
 	public void setDescription(String description) {
 		this.description = description;
 	}
+	
 	public Integer getUserId() {
 		return userId;
 	}

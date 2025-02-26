@@ -6,8 +6,8 @@
   <meta charset="utf-8">
   <meta content="width=device-width, initial-scale=1.0" name="viewport">
 
-  <title>TrackYourExpense</title>    
-  	<jsp:include page="common/css.jsp"></jsp:include>
+  <title>TrackYourExpense</title>
+      <jsp:include page="common/css.jsp"></jsp:include>
 </head>
 
 <body>
@@ -39,7 +39,7 @@
             <div class="card-body">
               <div class="d-flex justify-content-between align-items-center">
 		        <h5 class="card-title">Datatables</h5>
-		        <a href="addSubCategory" class="btn btn-primary"><i class="ri-add-fill"></i> Add New Sub Category</a>
+		        <a href="addIncome" class="btn btn-primary"><i class="ri-add-fill"></i> Add New Income</a>
 		      </div>
              
               <!-- Table with stripped rows -->
@@ -64,10 +64,25 @@
 					<thead>
 						<tr>
 							<th data-sortable="true" >
-								<button class="datatable-sorter">Title</button>
+								<button class="datatable-sorter">First Name</button>
 							</th>
-							<th>
-								<button class="datatable-sorter">Category </button>
+							<th data-sortable="true" >
+								<button class="datatable-sorter">Last Name</button>
+							</th>
+							<th data-sortable="true" >
+								<button class="datatable-sorter">Email</button>
+							</th>
+							<th data-sortable="true" >
+								<button class="datatable-sorter">Gender</button>
+							</th>
+							<th data-sortable="true" >
+								<button class="datatable-sorter">City</button>
+							</th>
+							<th data-sortable="true" >
+								<button class="datatable-sorter">Created date</button>
+							</th>
+							<th data-sortable="true" >
+								<button class="datatable-sorter">Active?</button>
 							</th>
 							<th> 
 								<button>Action</button>
@@ -75,14 +90,19 @@
 						</tr>
 					</thead>
 					<tbody>
-						<c:forEach items="${subCategoryList}" var="i">
+						<c:forEach items="${userList}" var="i">
 							<tr>
-								<td>${i.title }</td>
-								<td>${i.categoryId }</td>
-								<td><a href="viewSubCategory?subCategoryId=${i.subCategoryId}"> view </a> | 	
-									<a href="deleteSubCategory?subCategoryId=${i.subCategoryId}"> delete </a> |
-									<a href="editSubCategory?subCategoryId=${i.subCategoryId}"> edit </a> </td>
-							</tr>							 
+								<td>${i.firstName }</td>
+								<td>${i.lastName }</td>
+								<td>${i.email }</td>
+								<td>${i.gender }</td>
+								<td>${i.city }</td>
+								<td>${i.createdAt }</td>
+								<td>${i.active }</td>
+								<td><a href="viewUser?userId=${i.userId}"> view </a> | 	
+									<a href="deleteUser?userId=${i.userId}"> delete </a> |
+									<a href="editUser?userId=${i.userId}"> edit </a> </td>
+							</tr> 
 						</c:forEach>
 					</tbody>
 				</table>
@@ -138,8 +158,6 @@
 
   <!-- ======= Footer ======= -->
       <jsp:include page="common/footer.jsp"></jsp:include>
-
-  <a href="#" class="back-to-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>
 
       <jsp:include page="common/js.jsp"></jsp:include>
 

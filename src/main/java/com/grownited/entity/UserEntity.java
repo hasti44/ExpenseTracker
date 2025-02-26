@@ -1,7 +1,5 @@
 package com.grownited.entity;
 
-import java.time.LocalDateTime;
-
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.Table;
@@ -16,9 +14,10 @@ public class UserEntity {//users table
 	private String firstName;
 	private String lastName;
 	private String email;
+	private String gender;
 	private String password;
 	private String city;
-	private LocalDateTime createdAt;
+	private String createdAt;
 	private String role;
 	private boolean isActive;
 	
@@ -53,6 +52,14 @@ public class UserEntity {//users table
 	public void setEmail(String email) {
 		this.email = email;
 	}
+	
+	
+	public String getGender() {
+		return gender;
+	}
+	public void setGender(String gender) {
+		this.gender = gender;
+	}
 	public String getPassword() {
 		return password;
 	}
@@ -67,10 +74,10 @@ public class UserEntity {//users table
 		this.city = city;
 	}
 	
-	public LocalDateTime getCreatedAt() {
+	public String getCreatedAt() {
 		return createdAt;
 	}
-	public void setCreatedAt(LocalDateTime createdAt) {
+	public void setCreatedAt(String createdAt) {
 		this.createdAt = createdAt;
 	}
 	public String getRole() {

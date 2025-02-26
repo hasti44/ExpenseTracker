@@ -5,7 +5,7 @@
   <meta charset="utf-8">
   <meta content="width=device-width, initial-scale=1.0" name="viewport">
 
-  <title>Dashboard - TrackYourExp Bootstrap Template</title>
+  <title>TrackYourExpense</title>
   <meta content="" name="description">
   <meta content="" name="keywords">
 
@@ -83,7 +83,7 @@
             </li>
 
             <li>
-              <a class="dropdown-item d-flex align-items-center" href="users-profile.html">
+              <a class="dropdown-item d-flex align-items-center" href="userProfile">
                 <i class="bi bi-person"></i>
                 <span>My Profile</span>
               </a>
@@ -166,24 +166,30 @@
           <i class="bi bi-grid"></i><span>SubCategories</span>
         </a>
       </li>
+      
       <li class="nav-item">
       <a href="listExpense" class="nav-link">  
           <i class="bi bi-grid"></i><span>Expense</span>
         </a>
-      </li>    
-
-      <li class="nav-item">
-        <a href="listIncome" class=" nav-link">
-          <i class="bi bi-grid"></i><span>Income</span>
-        </a>
-	  </li>
-      
-
+      </li>
+          
 	</ul>
   </aside><!-- End Sidebar --> 
 
   <main id="main" class="main">
-  
+  <h3></h3>
+  <a href="addExpense" >addExpense</a><br>
+  <a href="listExpense" >listExpense</a><br>
+  <a href="addCategory" >addCategory</a><br>
+  <a href="listCategory" >listCategory</a><br>
+  <a href="addSubCategory" >addSubCategory</a><br>
+  <a href="listSubCategory" >listSubCategory</a><br>
+  <a href="addAccount" >addAccount</a><br>
+  <a href="listAccount" >listAccount</a><br>
+  <a href="addIncome" >addIncome</a><br>
+  <a href="listIncome" >listIncome</a><br>
+  <a href="addVender" >addVender</a><br>
+  <a href="listVender" >listVender</a></h3>
   </main>
 
   <!-- ======= Footer ======= -->
@@ -203,15 +209,13 @@
   <a href="#" class="back-to-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>
 
   <!-- Vendor JS Files -->
-  <script src="assets/vendor/apexcharts/apexcharts.min.js"></script>
   <script src="assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
   <script src="assets/vendor/chart.js/chart.umd.js"></script>
   <script src="assets/vendor/echarts/echarts.min.js"></script>
   <script src="assets/vendor/quill/quill.js"></script>
   <script src="assets/vendor/simple-datatables/simple-datatables.js"></script>
   <script src="assets/vendor/tinymce/tinymce.min.js"></script>
-  <script src="assets/vendor/php-email-form/validate.js"></script>
-
+ 
   <!-- Template Main JS File -->
   <script src="assets/js/main.js"></script>
 

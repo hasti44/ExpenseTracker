@@ -85,6 +85,16 @@
                       <div class="invalid-feedback">Please enter a valid Email adddress!</div>
                     </div>
 
+					<div class="col-sm-10">
+					      <label for="gender" class="form-label">Gender</labeL> 
+	                      
+	                      <input class="form-check-input" type="radio" name="gender" id="male" value="male" required>
+	                      <label class="form-check-label" for="male">Male</label>
+	                      
+	                      <input class="form-check-input" type="radio" name="gender" id="female" value="female" required>
+	                      <label class="form-check-label" for="female">Female</label>
+                  </div>
+                  
                     <div class="col-12">
                       <label for="yourPassword" class="form-label">Password</label>
                       <input type="password" name="password" class="form-control" id="yourPassword" required>

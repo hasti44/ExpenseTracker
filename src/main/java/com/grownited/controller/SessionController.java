@@ -1,6 +1,8 @@
 package com.grownited.controller;
 
 import java.time.LocalDateTime;
+import java.time.format.DateTimeFormatter;
+import java.util.List;
 import java.util.Optional;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -12,6 +14,7 @@ import org.springframework.web.bind.annotation.PostMapping;
 //import org.springframework.web.bind.annotation.RequestParam;
 //import org.springframework.web.bind.annotation.RequestBody;
 
+import com.grownited.entity.AccountEntity;
 import com.grownited.entity.UserEntity;
 import com.grownited.repository.UserRepository;
 import com.grownited.service.MailService;
@@ -69,7 +72,7 @@ public class SessionController {
 		entityUser.setRole("USER");
 		entityUser.setActive(true);
 		
-		entityUser.setCreatedAt(LocalDateTime.now());
+		entityUser.setCreatedAt(LocalDateTime.now().format(DateTimeFormatter.ofPattern("yyyy-MM-dd HH:mm:ss")));
 		repoUser.save(entityUser);
 		
 		//send mail to user
@@ -121,5 +124,18 @@ public class SessionController {
 		session.invalidate();
 		return "redirect:/login";
 	}
-	
+	@GetMapping("userProfile")
+	public String userProfile(HttpSession session) {
+		session.invalidate();
+		return "redirect:/userProfile";
+	}
+	@GetMapping("listUser")
+	public String listUser(Model model) {
+		
+		List<UserEntity> userList = repoUser.findAll();//retrive data from DB
+		
+		//controller to jsp
+		model.addAttribute("userList", userList);//("dataname",datavalue)
+		return "listUser";
+	}
 }

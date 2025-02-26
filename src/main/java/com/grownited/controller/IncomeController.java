@@ -9,17 +9,23 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 
+import com.grownited.entity.AccountEntity;
 import com.grownited.entity.IncomeEntity;
+import com.grownited.repository.AccountRepository;
 import com.grownited.repository.IncomeRepository;
 
 @Controller
 public class IncomeController {
 	@Autowired
 	IncomeRepository repoIncome;
+	@Autowired
+	AccountRepository repoAccount;
 	
 	@GetMapping("addIncome")//name in url
-	public String addIncome() {
-
+	public String addIncome(Model model) {
+		List<AccountEntity> accountList = repoAccount.findAll();
+		model.addAttribute("accountList", accountList);//("dataname",datavalue)
+		
 		return "addIncome"; // jsp Name
 	}
 	
@@ -28,6 +34,7 @@ public class IncomeController {
 	
 		repoIncome.save(incomeEntity);
 		System.out.println("new income details and db insertion.... ");
+		System.out.println(incomeEntity.getAccountId());
 		
 		return "redirect:/listIncome"; // jsp Name
 	}
@@ -38,7 +45,7 @@ public class IncomeController {
 		List<IncomeEntity> incomeList = repoIncome.findAll();//retrive data from DB
 		
 		//controller to jsp
-		model.addAttribute("IncomeList", incomeList);//("dataname",datavalue)
+		model.addAttribute("incomeList", incomeList);//("dataname",datavalue)
 		
 		System.out.println(incomeList.get(0).getTitle());                                 
 		
@@ -61,6 +68,6 @@ public class IncomeController {
 	public String deleteIncome(Integer incomeId) {
 		System.out.println(incomeId);
 		repoIncome.deleteById(incomeId);
-		return "redirectct:/listIncome";
+		return "redirect:/listIncome";
 	}
 }

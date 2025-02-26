@@ -1,22 +1,68 @@
-<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+    pageEncoding="UTF-8"%>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-    <title>Account Management</title>
-    <style>
-        body { font-family: Arial, sans-serif; margin: 20px; }
-        form, table { width: 50%; margin: auto; }
-        input, textarea { width: 100%; padding: 8px; margin: 5px 0; }
-        button { background: #f39c12; color: white; padding: 10px; border: none; cursor: pointer; }
-    </style>
+  <meta charset="utf-8">
+  <meta content="width=device-width, initial-scale=1.0" name="viewport">
+
+  <title>TrackYourExpense</title>
+  <jsp:include page="common/css.jsp"></jsp:include>
 </head>
+
 <body>
-    <h2>Account Management</h2>
-    <form action="saveAccount" method="post">
-        <input type="text" placeholder="title" name="title" required>
-        <input type="number" placeholder="amount" name="amount" required>
-        <textarea placeholder="description" name="description"></textarea>
-        <button type="submit">Create Account</button>
-    </form>
+
+  <!-- ======= Header ======= -->
+  <jsp:include page="common/header.jsp"></jsp:include>
+  <!-- ======= Sidebar ======= -->
+  <jsp:include page="common/sidebar.jsp"></jsp:include> 
+
+  <main id="main" class="main">
+  	<div class="pagetitle">
+      <h1>Form Elements</h1>
+      <nav>
+        <ol class="breadcrumb">
+          <li class="breadcrumb-item"><a href="index.html">Home</a></li>
+          <li class="breadcrumb-item">Forms</li>
+          <li class="breadcrumb-item active">Elements</li>
+        </ol>
+      </nav>
+    </div>
+  	<section class="section">
+  	  <div class="row">
+  	    <div class="col-lg-6">
+  		  <div class="card">
+ 			<div class="card-body">
+ 				<h5 class="card-title">form</h5>
+			  	<form class="row g-3" action="saveAccount" method="post" >
+			                <div class="col-12">
+			                  <label for="inputNanme4" class="form-label">Account Name</label>
+			                  <input type="text" class="form-control" id="inputNanme4" name="title">
+			                </div>
+			                <div class="col-12">
+			                  <label for="inputNanme4" class="form-label">Amount</label>
+			                  <input type="text" class="form-control" id="inputNanme4" name="amount">
+			                </div>
+			                <div class="col-12">
+			                  <label for="inputNanme4" class="form-label">Description</label>
+			                  <input type="text" class="form-control" id="inputNanme4" name="description">
+			                </div>
+			                <div class="text-center">
+			                  <button type="submit" class="btn btn-primary">Add Account</button>
+			                </div>
+				</form>
+			</div>
+		  </div>
+		</div>
+	  </div>
+	</section>
+  </main>
+
+  <!-- ======= Footer ======= -->
+  <jsp:include page="common/footer.jsp"></jsp:include>
+  
+  <jsp:include page="common/js.jsp"></jsp:include>
+
 </body>
 </html>
