@@ -39,7 +39,7 @@
 				  	<form class="row g-3" action="saveCategory" method="post" >
 				                <div class="col-12">
 				                  <label for="inputNanme4" class="form-label">Category</label>
-				                  <input type="text" class="form-control" id="inputNanme4" name="title">
+				                  <input type="text" class="form-control" id="inputNanme4" name="title" required>
 				                </div>
 				                <div class="text-center">
 				                  <button type="submit" class="btn btn-primary">Add Category</button>

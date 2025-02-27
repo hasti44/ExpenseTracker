@@ -24,6 +24,7 @@
   <jsp:include page="common/header.jsp"></jsp:include>
   <!-- ======= Sidebar ======= --> 
   <jsp:include page="common/sidebar.jsp"></jsp:include>
+        
   <main id="main" class="main">
 
     <div class="pagetitle">

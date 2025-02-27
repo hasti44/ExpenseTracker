@@ -11,8 +11,11 @@ import org.springframework.web.bind.annotation.PostMapping;
 
 import com.grownited.entity.AccountEntity;
 import com.grownited.entity.IncomeEntity;
+import com.grownited.entity.UserEntity;
 import com.grownited.repository.AccountRepository;
 import com.grownited.repository.IncomeRepository;
+
+import jakarta.servlet.http.HttpSession;
 
 @Controller
 public class IncomeController {
@@ -30,8 +33,10 @@ public class IncomeController {
 	}
 	
 	@PostMapping("saveIncome")//name in url
-	public String saveIncome(IncomeEntity incomeEntity ) {
-	
+	public String saveIncome(IncomeEntity incomeEntity, HttpSession session ) {
+		UserEntity user = (UserEntity)session.getAttribute("user");//Object
+		Integer userId = user.getUserId();
+		incomeEntity.setUserId(userId);
 		repoIncome.save(incomeEntity);
 		System.out.println("new income details and db insertion.... ");
 		System.out.println(incomeEntity.getAccountId());

@@ -9,8 +9,11 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 
+import com.grownited.entity.UserEntity;
 import com.grownited.entity.VenderEntity;
 import com.grownited.repository.VenderRepository;
+
+import jakarta.servlet.http.HttpSession;
 
 @Controller
 public class VenderController {
@@ -24,8 +27,12 @@ public class VenderController {
 	}
 	
 	@PostMapping("saveVender")//name in url
-	public String saveVender(VenderEntity venderEntity ) {
-	
+	public String saveVender(VenderEntity venderEntity, HttpSession session ) {
+		
+		UserEntity user = (UserEntity)session.getAttribute("user");//Object
+		Integer userId = user.getUserId();
+		venderEntity.setUserId(userId);
+		
 		repoVender.save(venderEntity);
 		System.out.println("new Vender details and db insertion.... ");
 		System.out.println(venderEntity.getTitle());

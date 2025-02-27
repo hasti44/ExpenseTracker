@@ -1,3 +1,4 @@
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 <!-- ======= Sidebar ======= -->
   <aside id="sidebar" class="sidebar">
 
@@ -5,41 +6,41 @@
     
       <li class="nav-item">
         <a class="nav-link " href="userHome">
-          <span>Home</span>
+          <i class="ri-home-7-fill"></i><span>Home</span>
         </a>
 
       <li class="nav-item">
         <a href="listAccount" class=" nav-link" >
-          <i class="bi bi-grid"></i><span>Account</span>
+          <i class="ri-wallet-2-fill"></i><span>Account</span>
         </a>
       </li>
       
       <li class="nav-item">
         <a href="listIncome" class=" nav-link" >
-          <i class="bi bi-grid"></i><span>Income</span>
+          <i class="ri-hand-coin-fill"></i><span>Income</span>
         </a>
       </li>
       
       <li class="nav-item">
         <a href="listVender" class=" nav-link" >
-          <i class="bi bi-grid"></i><span>Vender</span>
+          <i class="ri-store-3-fill"></i><span>Vender</span>
         </a>
       </li>
       
       <li class="nav-item">
         <a href="listCategory" class=" nav-link">
-          <i class="bi bi-grid"></i><span>Categories</span>
+          <i class="bi bi-grid-fill"></i><span>Categories</span>
         </a>
       </li>
       
       <li class="nav-item">
         <a href="listSubCategory" class=" nav-link">
-          <i class="bi bi-grid"></i><span>SubCategories</span>
+          <i class="bi bi-grid-3x3-gap-fill"></i><span>SubCategories</span>
         </a>
       </li>
       <li class="nav-item">
       <a href="listExpense" class="nav-link">  
-          <i class="bi bi-grid"></i><span>Expense</span>
+          <i class="ri-hand-coin-line"></i><span>Expense</span>
         </a>
       </li> 
 	</ul>

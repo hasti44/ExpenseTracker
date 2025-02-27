@@ -8,6 +8,7 @@
 
   <title>TrackYourExpense</title>
       <jsp:include page="common/css.jsp"></jsp:include>
+      <link  href="https://cdn.datatables.net/2.2.2/css/dataTables.bootstrap5.min.css" rel="stylesheet"/>
 </head>
 
 <body>
@@ -21,12 +22,11 @@
 
   <main id="main" class="main">
     <div class="pagetitle">
-      <h1>Data Tables</h1>
+      <h1>Data</h1>
       <nav>
         <ol class="breadcrumb">
           <li class="breadcrumb-item"><a href="index.html">Home</a></li>
-          <li class="breadcrumb-item">Tables</li>
-          <li class="breadcrumb-item active">Data</li>
+          <li class="breadcrumb-item">Venders</li>
         </ol>
       </nav>
     </div><!-- End Page Title -->
@@ -43,28 +43,13 @@
 		      </div>
              
               <!-- Table with stripped rows -->
-            <div class="datatable-wrapper datatable-loading no-footer sortable searchable fixed-columns"><div class="datatable-top">
-			    <div class="datatable-dropdown">
-		            <label>
-		                <select class="datatable-selector" name="per-page">
-		                	<option value="5">5</option>
-		                	<option value="10" selected>10</option>
-		                	<option value="15">15</option>
-		                	<option value="-1">All</option>
-	                	</select> entries per page
-		            </label>
-			       </div>
-			    <div class="datatable-search">
-			            <input class="datatable-input" placeholder="Search..." type="search" name="search" title="Search within table">
-			    </div>
-			</div>
 			<div class="datatable-container">
 			
-				<table class="table datatable datatable-table">
+				<table class="table datatable datatable-table" id="myTable">
 					<thead>
 						<tr>
-							<th data-sortable="true" >
-								<button class="datatable-sorter">Title</button>
+							<th>
+								<button>Title</button>
 							</th>
 							<th> 
 								<button>Action</button>
@@ -75,55 +60,14 @@
 						<c:forEach items="${venderList}" var="i">
 							<tr  data-index="i">
 								<td>${i.title }</td>
-								<td><a href="viewVender?venderId=${i.venderId}"> view </a> | 	
-									<a href="deleteVender?venderId=${i.venderId}"> delete </a> |
-									<a href="editVender?venderId=${i.venderId}"> edit </a> </td>
+								<td><a href="viewVender?venderId=${i.venderId}"> <i class=" bx bx-detail"></i> </a> | 	
+									<a href="deleteVender?venderId=${i.venderId}"> <i class="ri-delete-bin-5-fill"></i> </a> |
+									<a href="editVender?venderId=${i.venderId}"> <i class="bx bxs-edit-alt"></i> </a> </td>
 							</tr> 
 						</c:forEach>
 					</tbody>
 				</table>
-			</div>
-			<div class="datatable-bottom">
-			     
-			    <nav class="datatable-pagination">
-			    	<ul class="datatable-pagination-list">
-			    		<li class="datatable-pagination-list-item datatable-hidden datatable-disabled">
-			    			<button data-page="1" class="datatable-pagination-list-item-link" aria-label="Page 1">‹</button>
-		    			</li>
-		    			<li class="datatable-pagination-list-item datatable-active">
-    						<button data-page="1" class="datatable-pagination-list-item-link" aria-label="Page 1">1</button>
-   						</li>
-   						<li class="datatable-pagination-list-item">
-							<button data-page="2" class="datatable-pagination-list-item-link" aria-label="Page 2">2</button>
-						</li>
-						<li class="datatable-pagination-list-item">
-							<button data-page="3" class="datatable-pagination-list-item-link" aria-label="Page 3">3</button>
-						</li>	
-						<li class="datatable-pagination-list-item">
-							<button data-page="4" class="datatable-pagination-list-item-link" aria-label="Page 4">4</button>
-						</li>
-						<li class="datatable-pagination-list-item">
-							<button data-page="5" class="datatable-pagination-list-item-link" aria-label="Page 5">5</button>
-						</li>
-						<li class="datatable-pagination-list-item">
-							<button data-page="6" class="datatable-pagination-list-item-link" aria-label="Page 6">6</button>
-						</li>
-						<li class="datatable-pagination-list-item">
-							<button data-page="7" class="datatable-pagination-list-item-link" aria-label="Page 7">7</button>
-						</li>
-						<li class="datatable-pagination-list-item datatable-ellipsis datatable-disabled">
-							<button class="datatable-pagination-list-item-link">…</button>
-						</li>
-						<li class="datatable-pagination-list-item">
-							<button data-page="10" class="datatable-pagination-list-item-link" aria-label="Page 10">10</button>
-						</li>
-						<li class="datatable-pagination-list-item">
-							<button data-page="2" class="datatable-pagination-list-item-link" aria-label="Page 2">›</button>
-						</li>
-					</ul>
-				</nav>
-			 </div>
-		   </div>			              <!-- End Table with stripped rows -->
+			</div>			              <!-- End Table with stripped rows -->
           </div>
          </div>
         </div>
@@ -138,7 +82,14 @@
   <a href="#" class="back-to-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>
 
       <jsp:include page="common/js.jsp"></jsp:include>
-
+	<script src="https://code.jquery.com/jquery-3.7.1.min.js" integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
+	<script src="https://cdn.datatables.net/2.2.2/js/dataTables.min.js"></script>
+	<script src="https://cdn.datatables.net/2.2.2/js/dataTables.bootstrap5.min.js"></script>
+	<script type="text/javascript">
+	$( document ).ready(function() {
+		let table = new DataTable('#myTable');
+	});
+	</script>
 
 
 </body>

@@ -58,29 +58,7 @@ public class SessionController {
 		return "ForgotPassword"; // jsp name
 	}
 	
-	//sign up 
-	@PostMapping("saveUser")
-	public String saveUser(UserEntity entityUser) {
 		
-		//encryption of password
-		String ePass = encoder.encode(entityUser.getPassword());
-		entityUser.setPassword(ePass);
-		System.out.println("validation and db insertion.....");
-		
-		System.out.println(entityUser.getFirstName());
-		System.out.println(entityUser.getEmail());
-		entityUser.setRole("USER");
-		entityUser.setActive(true);
-		
-		entityUser.setCreatedAt(LocalDateTime.now().format(DateTimeFormatter.ofPattern("yyyy-MM-dd HH:mm:ss")));
-		repoUser.save(entityUser);
-		
-		//send mail to user
-		//serviceMail.sendWelcomeMail(entityUser.getEmail(), entityUser.getFirstName());
-
-		return "Login";
-	}
-	
 	
 	@PostMapping("updatePassword")
 	public String updatePassword() {
@@ -129,13 +107,5 @@ public class SessionController {
 		session.invalidate();
 		return "redirect:/userProfile";
 	}
-	@GetMapping("listUser")
-	public String listUser(Model model) {
-		
-		List<UserEntity> userList = repoUser.findAll();//retrive data from DB
-		
-		//controller to jsp
-		model.addAttribute("userList", userList);//("dataname",datavalue)
-		return "listUser";
-	}
+	
 }

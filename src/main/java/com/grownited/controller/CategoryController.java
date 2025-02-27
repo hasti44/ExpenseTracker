@@ -10,7 +10,10 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 
 import com.grownited.entity.CategoryEntity;
+import com.grownited.entity.UserEntity;
 import com.grownited.repository.CategoryRepository;
+
+import jakarta.servlet.http.HttpSession;
 
 @Controller
 public class CategoryController {
@@ -25,8 +28,10 @@ public class CategoryController {
 	
 	
 	@PostMapping("saveCategory")//name in url
-	public String saveCategory(CategoryEntity categoryEntity) {
-		
+	public String saveCategory(CategoryEntity categoryEntity, HttpSession session) {
+		UserEntity user = (UserEntity)session.getAttribute("user");//Object
+		Integer userId = user.getUserId();
+		categoryEntity.setUserId(userId);
 		System.out.println("add new category and db insertion.....");
         // Process the data (e.g., save to database)
 		

@@ -39,33 +39,42 @@
 				  	<form class="row g-3" action="saveExpense" method="post">
 		                <div class="col-12">
 		                  <label for="inputNanme4" class="form-label">Expense title</label>
-		                  <input type="text" class="form-control" id="inputNanme4" name="title">
+		                  <input type="text" class="form-control" id="inputNanme4" name="title" required>
 		                </div>
 		                <div class="col-12">
 		                  <label for="inputNanme4" class="form-label">Amount</label>
-		                  <input type="number" step="0.01" class="form-control" id="inputNanme4" name="amount">
+		                  <input type="number" step="0.01" class="form-control" id="inputNanme4" name="amount" required>
 		                </div>
 		                <div class="col-md-6">
-		                  <select id="inputState" class="form-select" name="categoryId">
-		                    <option selected>Choose category</option>
+		                  <select id="inputState" class="form-select" name="categoryId" required>
+		                    <option selected >Choose category</option>
 		                    <c:forEach items="${categoryList}" var="i">
 								<option value="${i.categoryId}">${i.title}</option>
 							</c:forEach>
 		                  </select>
 		                </div>
 		                <div class="col-md-6">
-		                  <select id="inputState" class="form-select" name="subCategoryId">
-		                    <option selected>Choose Subcategory</option>
+		                  <select id="inputState" class="form-select" name="subCategoryId" required>
+		                    <%-- <option disabled selected>Choose Subcategory</option>
 		                    <c:forEach items="${subCategoryList}" var="i">
 								<option value="${i.subCategoryId}">${i.title}</option>
-							</c:forEach>
+							</c:forEach> --%>
+							<option value="99">sub category</option>
 		                  </select>
 		                </div>
 		                <div class="col-md-6">
-		                  <select id="inputState" class="form-select" name="accountId">
-		                    <option selected>Choose Account</option>
+		                  <select id="inputState" class="form-select" name="accountId" required>
+		                    <option disabled selected>Choose Account</option>
 		                    <c:forEach items="${accountList}" var="i">
 								<option value="${i.accountId}">${i.title}</option>
+							</c:forEach>
+		                  </select> 	
+		                </div>
+		                <div class="col-md-6">
+		                  <select id="inputState" class="form-select" name="venderId" required>
+		                    <option disabled selected >Choose vender</option>
+		                    <c:forEach items="${venderList}" var="i">
+								<option value="${i.venderId}">${i.title}</option>
 							</c:forEach>
 		                  </select>
 		                </div>

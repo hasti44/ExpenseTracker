@@ -38,15 +38,15 @@
 			  	<form class="row g-3" action="saveAccount" method="post" >
 			                <div class="col-12">
 			                  <label for="inputNanme4" class="form-label">Account Name</label>
-			                  <input type="text" class="form-control" id="inputNanme4" name="title">
+			                  <input type="text" class="form-control" id="inputNanme4" name="title" required>
 			                </div>
 			                <div class="col-12">
 			                  <label for="inputNanme4" class="form-label">Amount</label>
-			                  <input type="text" class="form-control" id="inputNanme4" name="amount">
+			                  <input type="text" class="form-control" id="inputNanme4" name="amount" required>
 			                </div>
 			                <div class="col-12">
 			                  <label for="inputNanme4" class="form-label">Description</label>
-			                  <input type="text" class="form-control" id="inputNanme4" name="description">
+			                  <input type="text" class="form-control" id="inputNanme4" name="description" >
 			                </div>
 			                <div class="text-center">
 			                  <button type="submit" class="btn btn-primary">Add Account</button>

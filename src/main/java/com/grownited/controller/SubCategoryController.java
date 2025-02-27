@@ -11,8 +11,11 @@ import org.springframework.web.bind.annotation.PostMapping;
 
 import com.grownited.entity.CategoryEntity;
 import com.grownited.entity.SubCategoryEntity;
+import com.grownited.entity.UserEntity;
 import com.grownited.repository.CategoryRepository;
 import com.grownited.repository.SubCategoryRepository;
+
+import jakarta.servlet.http.HttpSession;
 
 @Controller
 public class SubCategoryController {
@@ -34,12 +37,15 @@ public class SubCategoryController {
 	}
 	
 	@PostMapping("saveSubCategory")//name in url
-	public String saveSubCategory(SubCategoryEntity subCategoryEntity ) {
-		System.out.println(subCategoryEntity.getTitle());
-		System.out.println(subCategoryEntity.getCategoryId());
+	public String saveSubCategory(SubCategoryEntity entitySubCategory, HttpSession session ) {
+		UserEntity user = (UserEntity)session.getAttribute("user");//Object
+		Integer userId = user.getUserId();
+		entitySubCategory.setUserId(userId);
+		System.out.println(entitySubCategory.getTitle());
+		System.out.println(entitySubCategory.getCategoryId());
 		
 		System.out.println("new subCategory details and db insertion.... ");
-		repoSubCategory.save(subCategoryEntity);
+		repoSubCategory.save(entitySubCategory);
 		
 		return "redirect:/listSubCategory"; // jsp Name
 	}

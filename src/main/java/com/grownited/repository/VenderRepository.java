@@ -10,5 +10,5 @@ import com.grownited.entity.VenderEntity;
 
 @Repository
 public interface VenderRepository extends JpaRepository<VenderEntity, Integer> {
-	Optional<UserEntity>  findByUserId(Integer userId);
+	Optional<VenderEntity>  findByUserId(Integer userId);
 }
