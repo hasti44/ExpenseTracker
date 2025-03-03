@@ -7,10 +7,10 @@ import jakarta.persistence.Id;
 import jakarta.persistence.Table;
 
 @Entity
-@Table(name="vender")
+@Table(name="venders")
 public class VenderEntity {
 	private Integer venderId;
-	private String title;
+	private String venderTitle;
 	private Integer userId;//fk
 	
 	@Id
@@ -21,11 +21,12 @@ public class VenderEntity {
 	public void setVenderId(Integer venderId) {
 		this.venderId = venderId;
 	}
-	public String getTitle() {
-		return title;
+	
+	public String getVenderTitle() {
+		return venderTitle;
 	}
-	public void setTitle(String title) {
-		this.title = title;
+	public void setVenderTitle(String venderTitle) {
+		this.venderTitle = venderTitle;
 	}
 	public Integer getUserId() {
 		return userId;

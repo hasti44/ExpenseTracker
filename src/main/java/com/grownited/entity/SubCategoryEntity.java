@@ -10,7 +10,7 @@ import jakarta.persistence.Table;
 @Table(name="subCategories")
 public class SubCategoryEntity {
 	private Integer subCategoryId;
-	private String title;
+	private String subCategoryTitle;
 	private Integer categoryId;
 	private Integer userId;
 	
@@ -22,11 +22,12 @@ public class SubCategoryEntity {
 	public void setSubCategoryId(Integer subCategoryId) {
 		this.subCategoryId = subCategoryId;
 	}
-	public String getTitle() {
-		return title;
+	
+	public String getSubCategoryTitle() {
+		return subCategoryTitle;
 	}
-	public void setTitle(String title) {
-		this.title = title;
+	public void setSubCategoryTitle(String subCategoryTitle) {
+		this.subCategoryTitle = subCategoryTitle;
 	}
 	public Integer getCategoryId() {
 		return categoryId;

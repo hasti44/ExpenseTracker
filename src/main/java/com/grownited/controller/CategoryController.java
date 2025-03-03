@@ -36,7 +36,6 @@ public class CategoryController {
         // Process the data (e.g., save to database)
 		
 		repoCategory.save(categoryEntity);
-	    System.out.println("category added: " + categoryEntity.getTitle() );
 		
 		return "redirect:/listCategory"; // jsp Name
 	}
@@ -48,8 +47,7 @@ public class CategoryController {
 		
 		//controller to jsp
 		model.addAttribute("categoryList", categoryList);//("dataname",datavalue)
-		
-		System.out.println(categoryList.get(0).getTitle());                                 
+		                                
 		
 		return "listCategory"; //login jsp name
 	}

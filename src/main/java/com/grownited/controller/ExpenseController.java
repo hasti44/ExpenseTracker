@@ -53,17 +53,15 @@ public class ExpenseController {
 		List<VenderEntity> venderList = repoVender.findAll();
 		model.addAttribute("venderList", venderList);//("dataname",datavalue)
 
-		List<SubCategoryEntity> subCategoryList = (categoryId != null) ? repoSubCategory.findByCategoryId(categoryId) : Collections.emptyList();
-
+		List<SubCategoryEntity> subCategoryList = repoSubCategory.findAll();
 		model.addAttribute("subCategoryList", subCategoryList);
-		model.addAttribute("categoryId", categoryId);
-
+		
 		return "addExpense"; // jsp Name
 		
 	}
 	
 	@PostMapping("saveExpense")//name in url
-	public String saveExpense(ExpenseEntity entityExpense,HttpSession session ) {
+	public String saveExpense(ExpenseEntity entityExpense,HttpSession session) {
 
 		entityExpense.setTransactionDate(LocalDateTime.now().format(DateTimeFormatter.ofPattern("yyyy-MM-dd HH:mm:ss")));
 		UserEntity user = (UserEntity)session.getAttribute("user");//Object
@@ -79,28 +77,15 @@ public class ExpenseController {
 	public String listExpense(Model model,HttpSession session ) {
 		
 		//retrive data from DB
-		//List<ExpenseEntity> expenseList = repoExpense.findAll();
-		UserEntity user = (UserEntity) session.getAttribute("user");
-
-	    if (user == null) {
-	        return "redirect:/login"; // Redirect to login page if user is not found in session
-	    }
-
-	    Integer userId = user.getUserId();
-	    List<ExpenseEntity> expenseList = repoExpense.findByUserId(userId);
+		List<ExpenseEntity> expenseList = repoExpense.findAll();
+		
+			    
+	    //List<ExpenseEntity> expenseList = repoExpense.findByUserId(userId);
 
 	    // Add expense list to model
-	    model.addAttribute("expenseList", expenseList);
-
-	    // Logging for debugging
-	    if (!expenseList.isEmpty()) {
-	        System.out.println("First expense title: " + expenseList.get(0).getTitle());
-	    } else {
-	        System.out.println("No expenses found for user ID: " + userId);
-	    }	
+	    model.addAttribute("expenseList", expenseList);	
 		//controller to jsp
-		model.addAttribute("expenseList", expenseList);//("dataname",datavalue)
-		System.out.println(expenseList.get(0).getTitle());                                 
+		model.addAttribute("expenseList", expenseList);//("dataname",datavalue)                               
 		return "listExpense"; //login jsp name
 	}
 	@GetMapping("viewExpense")

@@ -9,6 +9,7 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 
+import com.grownited.dto.AccountDto;
 import com.grownited.entity.AccountEntity;
 import com.grownited.entity.UserEntity;
 import com.grownited.repository.AccountRepository;
@@ -40,11 +41,10 @@ public class AccountController {
 	@GetMapping("listAccount")//name in url
 	public String listAccount(Model model ) {
 		
-		List<AccountEntity> accountList = repoAccount.findAll();//retrive data from DB
+		List<AccountDto> accountList = repoAccount.getAll();//retrive data from DB
 		
 		//controller to jsp
-		model.addAttribute("accountList", accountList);//("dataname",datavalue)
-		System.out.println(accountList.get(0).getTitle());                                 
+		model.addAttribute("accountList", accountList);//("dataname",datavalue)                                
 		
 		return "listAccount"; //login jsp name
 	}

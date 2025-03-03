@@ -74,7 +74,7 @@
 					<tbody>
 						<c:forEach items="${expenseList}" var="i">
 							<tr>
-								<td>${i.title }</td>
+								<td>${i.expenseTitle }</td>
 								<td>${i.amount }</td>
 								<td>${i.categoryId }</td>
 								<td>${i.subCategoryId }</td>

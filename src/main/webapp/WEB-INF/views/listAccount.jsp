@@ -52,6 +52,9 @@
 							<th>
 								<button>Amount</button>
 							</th>
+							<th>
+								<button>User</button>
+							</th>
 
 							<th> 
 								<button>Action</button>
@@ -61,8 +64,9 @@
 					<tbody>
 						<c:forEach items="${accountList}" var="i">
 							<tr>
-								<td>${i.title }</td>
+								<td>${i.accountTitle }</td>
 								<td>${i.amount }</td>
+								<td>${i.firstName }</td>
 								<td><a href="viewAccount?accountId=${i.accountId}"> <i class=" bx bx-detail"></i> </a> | 	
 									<a href="deleteAccount?accountId=${i.accountId}"> <i class="ri-delete-bin-5-fill"></i> </a> |
 									<a href="editAccount?accountId=${i.accountId}"> <i class="bx bxs-edit-alt"></i></a> </td>

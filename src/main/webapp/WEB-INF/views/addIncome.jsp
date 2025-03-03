@@ -39,7 +39,7 @@
 				  	<form class="row g-3" action="saveIncome" method="post">
 		                <div class="col-12">
 		                  <label for="inputNanme4" class="form-label">Income</label>
-		                  <input type="text" class="form-control" id="inputNanme4" name="title" required>
+		                  <input type="text" class="form-control" id="inputNanme4" name="incomeTitle" required>
 		                </div>
 		                <div class="col-12">
 		                  <label for="inputNanme4" class="form-label">Amount</label>
@@ -49,7 +49,7 @@
 		                  <select id="inputState" class="form-select" name="accountId" required>
 		                    <option selected>Choose Account</option>
 		                    <c:forEach items="${accountList}" var="i">
-								<option value="${i.accountId}">${i.title}</option>
+								<option value="${i.accountId}">${i.accountTitle}</option>
 							</c:forEach>
 		                  </select>
 		                </div>

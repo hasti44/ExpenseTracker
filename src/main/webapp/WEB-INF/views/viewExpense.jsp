@@ -9,9 +9,8 @@
 	<body>
 		<h2>Expense </h2>		
 		<h3>	
-				Expense Id :${e.expenseId }<br>
 				Amount :${e.amount }<br>
-				Title :	${e.title }<br>
+				Title :	${e.expenseTitle }<br>
 				Description :${e.description }<br>
 				Transaction Date :${e.transactionDate }<br>
 				Account Id :${e.accountId }<br>

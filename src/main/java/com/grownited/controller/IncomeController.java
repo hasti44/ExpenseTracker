@@ -9,6 +9,7 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 
+import com.grownited.dto.IncomeDto;
 import com.grownited.entity.AccountEntity;
 import com.grownited.entity.IncomeEntity;
 import com.grownited.entity.UserEntity;
@@ -47,14 +48,13 @@ public class IncomeController {
 	@GetMapping("listIncome")//name in url
 	public String listIncome(Model model ) {
 		
-		List<IncomeEntity> incomeList = repoIncome.findAll();//retrive data from DB
+		List<IncomeDto> incomeList = repoIncome.getAll();//retrive data from DB
 		
 		//controller to jsp
 		model.addAttribute("incomeList", incomeList);//("dataname",datavalue)
+		                               
 		
-		System.out.println(incomeList.get(0).getTitle());                                 
-		
-		return "listIncome"; //login jsp name
+		return "listIncome"; //jsp name
 	}
 	
 	@GetMapping("viewIncome")

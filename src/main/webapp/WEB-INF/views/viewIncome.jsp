@@ -9,9 +9,8 @@
 	<body>
 		<h2>Income</h2>
 		<h3>					
-				${i.incomeId }<br>
 				${i.amount }<br>
-				${i.title }<br>
+				${i.incomeTitle }<br>
 				${i.description }<br>
 				${i.transactionDate }<br>
 		</h3>	

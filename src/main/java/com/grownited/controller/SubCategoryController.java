@@ -30,8 +30,7 @@ public class SubCategoryController {
 		
 		//controller to jsp
 		model.addAttribute("categoryList", categoryList);//("dataname",datavalue)
-		
-		System.out.println(categoryList.get(0).getTitle());                                
+		                               
 
 		return "addSubCategory"; // jsp Name
 	}
@@ -41,7 +40,6 @@ public class SubCategoryController {
 		UserEntity user = (UserEntity)session.getAttribute("user");//Object
 		Integer userId = user.getUserId();
 		entitySubCategory.setUserId(userId);
-		System.out.println(entitySubCategory.getTitle());
 		System.out.println(entitySubCategory.getCategoryId());
 		
 		System.out.println("new subCategory details and db insertion.... ");
@@ -57,8 +55,7 @@ public class SubCategoryController {
 		
 		//controller to jsp
 		model.addAttribute("subCategoryList", subCategoryList);//("dataname",datavalue)
-		
-		System.out.println(subCategoryList.get(0).getTitle());                                 
+		                                
 		
 		return "listSubCategory"; //login jsp name
 	}

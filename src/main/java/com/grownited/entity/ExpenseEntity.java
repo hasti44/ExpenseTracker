@@ -11,7 +11,7 @@ import jakarta.persistence.Id;
 public class ExpenseEntity {
 	
 	private Integer expenseId;
-	private String title;
+	private String expenseTitle;
 	private Integer categoryId;
 	private Integer subCategoryId;
 	private Integer venderId;
@@ -30,11 +30,12 @@ public class ExpenseEntity {
 	public void setExpenseId(Integer expenseId) {
 		this.expenseId = expenseId;
 	}
-	public String getTitle() {
-		return title;
+	
+	public String getExpenseTitle() {
+		return expenseTitle;
 	}
-	public void setTitle(String title) {
-		this.title = title;
+	public void setExpenseTitle(String expenseTitle) {
+		this.expenseTitle = expenseTitle;
 	}
 	public Integer getCategoryId() {
 		return categoryId;

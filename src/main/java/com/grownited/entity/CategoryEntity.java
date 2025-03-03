@@ -11,7 +11,7 @@ import jakarta.persistence.Id;
 public class CategoryEntity {
 	
 	private Integer categoryId;
-	private String title;
+	private String categoryTitle;
 	private Integer userId;
 	
 	@Id
@@ -22,11 +22,12 @@ public class CategoryEntity {
 	public void setCategoryId(Integer categoryId) {
 		this.categoryId = categoryId;
 	}
-	public String getTitle() {
-		return title;
+	
+	public String getCategoryTitle() {
+		return categoryTitle;
 	}
-	public void setTitle(String title) {
-		this.title = title;
+	public void setCategoryTitle(String categoryTitle) {
+		this.categoryTitle = categoryTitle;
 	}
 	public Integer getUserId() {
 		return userId;

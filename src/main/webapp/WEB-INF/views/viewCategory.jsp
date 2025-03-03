@@ -9,8 +9,7 @@
 <body>
 	<h2>category detail</h2>
 	<h3>
-		${c.categoryId}<br>
-		${c.title }
+		${c.categoryTitle }
 	</h3>
 </body>
 </html>

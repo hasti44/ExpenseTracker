@@ -9,8 +9,7 @@
 <body>
 	<h2>sub category</h2>
 	<h3>
-		${s.subCategoryId }<br>
-		${s.title }
+		${s.subCategoryTitle }
 	</h3>
 </body>
 </html>

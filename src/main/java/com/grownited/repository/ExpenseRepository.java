@@ -10,5 +10,4 @@ import com.grownited.entity.ExpenseEntity;
 @Repository
 public interface ExpenseRepository extends JpaRepository<ExpenseEntity, Integer>{
 	List<ExpenseEntity>  findByUserId(Integer userId);
-
 }

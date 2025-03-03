@@ -62,7 +62,7 @@
 					<tbody>
 						<c:forEach items="${subCategoryList}" var="i">
 							<tr>
-								<td>${i.title }</td>
+								<td>${i.subCategoryTitle }</td>
 								<td>${i.categoryId }</td>
 								<td><a href="viewSubCategory?subCategoryId=${i.subCategoryId}"> <i class=" bx bx-detail"></i> </a> | 	
 									<a href="deleteSubCategory?subCategoryId=${i.subCategoryId}"> <i class="ri-delete-bin-5-fill"></i> </a> |

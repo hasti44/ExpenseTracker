@@ -9,9 +9,8 @@
 <body>
 	<h2>Acount detail</h2>
 	<h3>
-		${a.accountId }<br>
+		${a.accountTitle }<br>
 		${a.amount }<br>
-		${a.title }<br>
 		${a.description }<br>
 		${a.transactionDate }
 	</h3>

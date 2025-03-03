@@ -1,14 +1,6 @@
-package com.grownited.entity;
+package com.grownited.dto;
 
-import jakarta.persistence.Entity;
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.GenerationType;
-import jakarta.persistence.Id;
-import jakarta.persistence.Table;
-
-@Entity
-@Table(name="incomes")
-public class IncomeEntity {
+public class IncomeDto {
 	private Integer incomeId;
 	private String incomeTitle;
 	private Integer accountId;
@@ -17,16 +9,25 @@ public class IncomeEntity {
 	private String transactionDate;
 	private String description;
 	private Integer userId;
-	
-	@Id
-	@GeneratedValue(strategy = GenerationType.IDENTITY)
+	private String firstName;
+	public IncomeDto(Integer incomeId, String incomeTitle, Integer accountId, float amount, String transactionDate,
+			String description, Integer userId, String firstName) {
+		super();
+		this.incomeId = incomeId;
+		this.incomeTitle = incomeTitle;
+		this.accountId = accountId;
+		this.amount = amount;
+		this.transactionDate = transactionDate;
+		this.description = description;
+		this.userId = userId;
+		this.firstName = firstName;
+	}
 	public Integer getIncomeId() {
 		return incomeId;
 	}
 	public void setIncomeId(Integer incomeId) {
 		this.incomeId = incomeId;
 	}
-	
 	public String getIncomeTitle() {
 		return incomeTitle;
 	}
@@ -62,6 +63,12 @@ public class IncomeEntity {
 	}
 	public void setUserId(Integer userId) {
 		this.userId = userId;
+	}
+	public String getFirstName() {
+		return firstName;
+	}
+	public void setFirstName(String firstName) {
+		this.firstName = firstName;
 	}
 	
 	

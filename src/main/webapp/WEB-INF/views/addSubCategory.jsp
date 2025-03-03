@@ -39,13 +39,13 @@
 				  	<form class="row g-3" action="saveSubCategory" method="post">
 		                <div class="col-12">
 		                  <label for="inputNanme4" class="form-label">Sub Category</label>
-		                  <input type="text" class="form-control" id="inputNanme4" name="title" required>
+		                  <input type="text" class="form-control" id="inputNanme4" name="subCategoryTitle" required>
 		                </div>
 		                <div class="col-md-6">
 		                  <select id="inputState" class="form-select" name="categoryId" required>
 		                    <option selected>Choose Category</option>
 		                    <c:forEach items="${categoryList}" var="i">
-								<option value="${i.categoryId}">${i.title}</option>
+								<option value="${i.categoryId}">${i.categoryTitle}</option>
 							</c:forEach>
 		                  </select>
 		                </div>
