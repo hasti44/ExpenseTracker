@@ -53,9 +53,6 @@ public class ExpenseController {
 		List<VenderEntity> venderList = repoVender.findAll();
 		model.addAttribute("venderList", venderList);//("dataname",datavalue)
 
-		List<SubCategoryEntity> subCategoryList = repoSubCategory.findAll();
-		model.addAttribute("subCategoryList", subCategoryList);
-		
 		return "addExpense"; // jsp Name
 		
 	}

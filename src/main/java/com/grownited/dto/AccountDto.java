@@ -8,7 +8,6 @@ public class AccountDto {
 	private Integer userId;
 	private String firstName;
 	
-	
 	public AccountDto(Integer accountId, String accountTitle, float amount, String description, Integer userId,
 			String firstName) {
 		super();

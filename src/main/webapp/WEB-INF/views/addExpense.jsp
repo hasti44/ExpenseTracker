@@ -9,6 +9,9 @@
 
   <title>TrackYourExpense</title>
     <jsp:include page="common/css.jsp"></jsp:include>
+    
+    <!-- jQuery for AJAX -->
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 </head>
 
 <body>
@@ -45,23 +48,26 @@
 		                  <label for="inputNanme4" class="form-label">Amount</label>
 		                  <input type="number" step="0.01" class="form-control" id="inputNanme4" name="amount" required>
 		                </div>
+		                
+		                <!-- Category Dropdown -->
 		                <div class="col-md-6">
-		                  <select id="inputState" class="form-select" name="categoryId" required>
-		                    <option selected >Choose category</option>
+		                  <label class="form-label">Category</label>
+		                  <select id="categorySelect" class="form-select" name="categoryId" required>
+		                    <option selected disabled>Choose category</option>
 		                    <c:forEach items="${categoryList}" var="i">
 								<option value="${i.categoryId}">${i.categoryTitle}</option>
 							</c:forEach>
 		                  </select>
 		                </div>
+
+		                <!-- Subcategory Dropdown (Dynamically Loaded) -->
 		                <div class="col-md-6">
-		                  <select id="inputState" class="form-select" name="subCategoryId" required>
-		                    <option disabled selected>Choose Subcategory</option>
-		                    <c:forEach items="${subCategoryList}" var="i">
-								<option value="${i.subCategoryId}">${i.subCategoryTitle}</option>
-							</c:forEach>
-							<option value="99">sub category</option>
+		                  <label class="form-label">Subcategory</label>
+		                  <select id="subcategorySelect" class="form-select" name="subCategoryId" required>
+		                    <option selected disabled>Choose Subcategory</option>
 		                  </select>
 		                </div>
+
 		                <div class="col-md-6">
 		                  <select id="inputState" class="form-select" name="accountId" required>
 		                    <option disabled selected>Choose Account</option>
@@ -93,6 +99,36 @@
 
     <jsp:include page="common/footer.jsp"></jsp:include>
     <jsp:include page="common/js.jsp"></jsp:include>
+
+    <!-- AJAX Script for Dynamic Subcategory Loading -->
+    <script>
+	    $(document).ready(function() {
+	        $("#categorySelect").change(function() {
+	            var categoryId = $(this).val();
+	            $("#subcategorySelect").html('<option>Loading...</option>');
+	
+	            if (categoryId) {
+	                $.ajax({
+	                    url: "getSubCategoriesByCategory", // New URL
+	                    type: "GET",
+	                    data: { categoryId: categoryId },
+	                    success: function(data) {
+	                        var options = '<option selected disabled>Choose Subcategory</option>';
+	                        $.each(data, function(index, subcategory) {
+	                            options += '<option value="' + subcategory.subCategoryId + '">' + subcategory.subCategoryTitle + '</option>';
+	                        });
+	                        $("#subcategorySelect").html(options);
+	                    },
+	                    error: function() {
+	                        $("#subcategorySelect").html('<option>Error loading data</option>');
+	                    }
+	                });
+	            } else {
+	                $("#subcategorySelect").html('<option selected disabled>Choose Subcategory</option>');
+	            }
+	        });
+	    });
+    </script>
 
 </body>
 </html>

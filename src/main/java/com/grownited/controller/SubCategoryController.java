@@ -8,6 +8,8 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.bind.annotation.ResponseBody;
 
 import com.grownited.entity.CategoryEntity;
 import com.grownited.entity.SubCategoryEntity;
@@ -49,7 +51,7 @@ public class SubCategoryController {
 	}
 	
 	@GetMapping("listSubCategory")//name in url
-	public String listSubCategory(Model model ) {
+	public String listSubCategory(Model model) {
 		
 		List<SubCategoryEntity> subCategoryList = repoSubCategory.findAll();//retrive data from DB
 		
@@ -59,7 +61,12 @@ public class SubCategoryController {
 		
 		return "listSubCategory"; //login jsp name
 	}
-	
+	@GetMapping("getSubCategoriesByCategory") // New mapping for AJAX
+	@ResponseBody
+	public List<SubCategoryEntity> getSubCategoriesByCategory(@RequestParam("categoryId") Integer categoryId) {
+	    return repoSubCategory.findByCategoryId(categoryId);
+	}
+
 	@GetMapping("viewSubCategory")
 	public String viewSubCategory(Integer subCategoryId, Model model) {
 			System.out.println(subCategoryId);

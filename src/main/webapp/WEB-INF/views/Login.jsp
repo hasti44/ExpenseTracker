@@ -83,6 +83,7 @@
                     </div>
                     <div class="col-12">
        		          <span class="text-danger">${error}</span>
+       		          <p class="small mb-0"><a href="fp">Forget Password</a></p>
                       <button class="btn btn-primary w-100" type="submit">Login</button>
                     </div>
                     <div class="col-12">

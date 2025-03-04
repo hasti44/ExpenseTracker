@@ -19,6 +19,7 @@ public class UserEntity {//users table
 	private String city;
 	private String createdAt;
 	private String role;
+	private String otp;
 	private boolean isActive;
 	
 	
@@ -92,7 +93,10 @@ public class UserEntity {//users table
 	public void setActive(boolean isActive) {
 		this.isActive = isActive;
 	}
-	
-	
-	
+	public String getOtp() {
+		return otp;
+	}
+	public void setOtp(String otp) {
+		this.otp = otp;
+	}
 }

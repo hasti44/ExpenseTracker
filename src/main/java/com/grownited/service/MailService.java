@@ -9,15 +9,19 @@ import org.springframework.stereotype.Service;
 public class MailService {
 	@Autowired
 	private JavaMailSender senderMail;
-	
+
 	public void sendWelcomeMail(String email, String firstName) {
-		String subject ="Welcome Mail";
-		String body="Dear"+ firstName+"\r\n"
+		String subject ="Welcome to TrackYourExp – Let’s Get Started!";
+		String body="Dear "+ firstName+",\r\n"
 				+ "\r\n"
-				+ "Welcome to Expense Tracker! We're excited to help you manage your expenses effortlessly. Get started by logging in and tracking your first expense today!\r\n"
+				+ "With TrackYourExp, you can easily manage your expenses, track spending, and stay on top of your financial goals.\r\n"
 				+ "\r\n"
-				+ "Happy saving!\r\n";
-		String from="hastijiyani04@gmail.com";
+				+ "Happy Tracking! 💰🚀\r\n"
+				+ "\r\n"
+				+ "Best regards,"
+				+ "\r\n"
+				+ "The TrackYourExp Team\r\n";
+		String from="21csjiy014@ldce.ac.in";
 		
         SimpleMailMessage message = new SimpleMailMessage();
         message.setTo(email);
@@ -26,5 +30,29 @@ public class MailService {
         message.setFrom(from);
 
         senderMail.send(message);
+	}
+	
+	public void sendOtpfp(String email, String firstName, String otp) {
+		String subject ="Password Reset Request";
+		String body="Dear"+ firstName+",\r\n"
+				+ "\r\n"
+				+ "We received a request to reset your password for your TrackYourExp account.\r\n"
+				+ "\r\n"
+				+ "this is the OTP for your password reset: "
+				+ otp + "\r\n"
+				+ "If you did not request a password reset, please ignore this email.\r\n"
+				+ "\r\n"
+				+ "Stay secure!\n\r\n"
+				+ "\r\n"
+				+ "The TrackYourExp Team\r\n";
+		String from="21csjiy014@ldce.ac.in";
+		
+		SimpleMailMessage message = new SimpleMailMessage();
+		message.setTo(email);
+		message.setSubject(subject);
+		message.setText(body);
+		message.setFrom(from);
+		
+		senderMail.send(message);
 	}
 }

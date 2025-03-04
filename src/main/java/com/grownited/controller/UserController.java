@@ -42,7 +42,7 @@ public class UserController {
 		repoUser.save(entityUser);
 		
 		//send mail to user
-		//serviceMail.sendWelcomeMail(entityUser.getEmail(), entityUser.getFirstName());
+		serviceMail.sendWelcomeMail(entityUser.getEmail(), entityUser.getFirstName());
 
 		return "Login";
 	}

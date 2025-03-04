@@ -1,8 +1,5 @@
 package com.grownited.controller;
 
-import java.time.LocalDateTime;
-import java.time.format.DateTimeFormatter;
-import java.util.List;
 import java.util.Optional;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -14,7 +11,6 @@ import org.springframework.web.bind.annotation.PostMapping;
 //import org.springframework.web.bind.annotation.RequestParam;
 //import org.springframework.web.bind.annotation.RequestBody;
 
-import com.grownited.entity.AccountEntity;
 import com.grownited.entity.UserEntity;
 import com.grownited.repository.UserRepository;
 import com.grownited.service.MailService;
@@ -53,21 +49,74 @@ public class SessionController {
 		return "Login"; //login jsp name
 	} 
 	
-	@GetMapping("fp")//name in url
+	// open forgetPassword jsp
+	@GetMapping("fp")
 	public String fp() {
-		return "ForgotPassword"; // jsp name
-	}
-	
 		
-	
-	@PostMapping("updatePassword")
-	public String updatePassword() {
-		return "Login";
+		return "forgetPassword"; // jsp name
+	}
+	@PostMapping("sendOTPfp")
+	public String sendOTPfp(String email, Model model) {
+		Optional<UserEntity> op = repoUser.findByEmail(email);
+		if (op.isEmpty()) {
+			// email invalid
+			model.addAttribute("error", "Email not found");
+			return "forgetPassword";
+		} else {
+			// email valid
+			// send mail otp
+			// opt generate
+			// send mail otp
+			String otp = "";
+			otp = (int) (Math.random() * 1000000) + "";// 0.25875621458541
+
+			UserEntity user = op.get();
+			user.setOtp(otp);
+			repoUser.save(user);// update otp for user
+			serviceMail.sendOtpfp(email, user.getFirstName(), otp);
+			return "resetPassword";
+
+		}
 	}
 	
-	@PostMapping("sendOTP")
-	public String sendOTP() {
+
+	// submit on forgetpassword ->
+	@PostMapping("sendOtpfp")
+	public String sendOtpfp(String email) {
+		
+		Optional<UserEntity> op = repoUser.findByEmail(email);
+		if(op.isEmpty()) {
+			return "fp";
+		}else {
+			
+		}
+		
+		
 		return "resetPassword";
+	}
+
+	@PostMapping("updatePassword")
+	public String updatePassword(String email, String password, String otp, Model model) {
+		Optional<UserEntity> op = repoUser.findByEmail(email);
+		if (op.isEmpty()) {
+			model.addAttribute("error", "Invalid Data");
+			return "resetPassword";
+		} else {
+			UserEntity user = op.get();
+			if (user.getOtp().equals(otp)) {
+				String encPwd = encoder.encode(password);
+				user.setPassword(encPwd);
+				user.setOtp("");
+				repoUser.save(user);// update
+			} else {
+
+				model.addAttribute("error", "Invalid Data");
+				return "resetPassword";
+			}
+		}
+		model.addAttribute("msg","Password updated");
+		return "Login";
+	
 	}
 	
 	@PostMapping("authenticate")
