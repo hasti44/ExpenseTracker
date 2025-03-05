@@ -42,6 +42,7 @@ public class VenderController {
 	@GetMapping("listVender")//name in url
 	public String listVender(Model model ) {
 		
+		//List<VenderEntity> venderList = repoVender.findAll();
 		List<VenderDto> venderList = repoVender.getAll();
 		model.addAttribute("venderList", venderList);//("dataname",datavalue)
 		                                

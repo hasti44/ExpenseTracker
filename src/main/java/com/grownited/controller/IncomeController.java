@@ -48,6 +48,7 @@ public class IncomeController {
 	@GetMapping("listIncome")//name in url
 	public String listIncome(Model model ) {
 		
+//		List<IncomeEntity> incomeList = repoIncome.findAll();//retrive data from DB
 		List<IncomeDto> incomeList = repoIncome.getAll();//retrive data from DB
 		
 		//controller to jsp

@@ -13,6 +13,6 @@ import com.grownited.entity.IncomeEntity;
 @Repository
 public interface IncomeRepository extends JpaRepository<IncomeEntity, Integer> {
 	Optional<AccountEntity>  findByUserId(Integer userId);
-	@Query(value = "SELECT i.*, u.first_name FROM users u, incomes i WHERE i.user_id = u.user_id", nativeQuery = true)
+	@Query(value = "SELECT i.*, u.first_name, a.account_title FROM incomes i JOIN users u ON i.user_id = u.user_id JOIN accounts a ON i.account_id = a.account_id", nativeQuery = true)
 	List<IncomeDto> getAll();
 }

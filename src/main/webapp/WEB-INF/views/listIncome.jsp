@@ -66,6 +66,7 @@
 							<th>
 								<button>User Name</button>
 							</th>
+							
 							<th> 
 								<button>Action</button>
 							</th>
@@ -78,7 +79,7 @@
 								<td>${i.amount }</td>
 								<td>${i.description }</td>
 								<td>${i.transactionDate }</td>
-								<td>${i.accountId }</td>
+								<td>${i.accountTitle }</td>
 								<td>${i.firstName }</td>
 								<td><a href="viewIncome?incomeId=${i.incomeId}"> <i class=" bx bx-detail"></i> </a> | 	
 									<a href="deleteIncome?incomeId=${i.incomeId}"> <i class="ri-delete-bin-5-fill"></i> </a> |

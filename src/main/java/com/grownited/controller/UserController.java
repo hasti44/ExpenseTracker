@@ -14,6 +14,8 @@ import org.springframework.web.bind.annotation.PostMapping;
 import com.grownited.entity.UserEntity;
 import com.grownited.repository.UserRepository;
 import com.grownited.service.MailService;
+import org.springframework.web.bind.annotation.RequestParam;
+
 
 @Controller
 public class UserController {
@@ -56,5 +58,9 @@ public class UserController {
 		model.addAttribute("userList", userList);//("dataname",datavalue)
 		return "listUser";
 	}
-
+	@GetMapping("userprofile")
+	public String userprofile() {
+		return "userProfile";
+	}
+	
 }

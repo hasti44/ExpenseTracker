@@ -11,6 +11,7 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
 
+import com.grownited.dto.SubCategoryDto;
 import com.grownited.entity.CategoryEntity;
 import com.grownited.entity.SubCategoryEntity;
 import com.grownited.entity.UserEntity;
@@ -53,7 +54,8 @@ public class SubCategoryController {
 	@GetMapping("listSubCategory")//name in url
 	public String listSubCategory(Model model) {
 		
-		List<SubCategoryEntity> subCategoryList = repoSubCategory.findAll();//retrive data from DB
+		//List<SubCategoryEntity> subCategoryList = repoSubCategory.findAll();//retrive data from DB
+		List<SubCategoryDto> subCategoryList = repoSubCategory.getAll();//retrive data from DB
 		
 		//controller to jsp
 		model.addAttribute("subCategoryList", subCategoryList);//("dataname",datavalue)

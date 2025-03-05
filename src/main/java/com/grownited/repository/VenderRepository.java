@@ -13,7 +13,7 @@ import com.grownited.entity.VenderEntity;
 @Repository
 public interface VenderRepository extends JpaRepository<VenderEntity, Integer> {
 	Optional<VenderEntity>  findByUserId(Integer userId);
-	@Query(value = "SELECT v.*, u.first_name FROM users u, venders v WHERE v.user_id = u.user_id", nativeQuery = true)
-	List<VenderDto> getAll();
 	
+	@Query(nativeQuery = true, value = "SELECT v.*, u.first_name FROM venders v, users u where v.user_id = u.user_id;")
+	List<VenderDto> getAll();
 }

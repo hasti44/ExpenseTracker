@@ -51,6 +51,10 @@
 							<th>
 								<button>Title</button>
 							</th>
+							<th>
+								<button>User Name</button>
+							</th>
+							
 							<th> 
 								<button>Action</button>
 							</th>
@@ -60,6 +64,7 @@
 						<c:forEach items="${categoryList}" var="i">
 							<tr>
 								<td>${i.categoryTitle }</td>
+								<td>${i.firstName }</td>
 								<td><a href="viewCategory?categoryId=${i.categoryId}"> <i class=" bx bx-detail"></i> </a> | 	
 									<a href="deleteCategory?categoryId=${i.categoryId}"><i class="ri-delete-bin-5-fill"></i></a> |
 									<a href="editCategory?categoryId=${i.categoryId}"> <i class="bx bxs-edit-alt"></i> </a> </td>
