@@ -13,6 +13,7 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 
+import com.grownited.dto.ExpenseDto;
 import com.grownited.entity.AccountEntity;
 import com.grownited.entity.CategoryEntity;
 import com.grownited.entity.ExpenseEntity;
@@ -74,7 +75,8 @@ public class ExpenseController {
 	public String listExpense(Model model,HttpSession session ) {
 		
 		//retrive data from DB
-		List<ExpenseEntity> expenseList = repoExpense.findAll();
+		//List<ExpenseEntity> expenseList = repoExpense.findAll();
+		List<ExpenseDto> expenseList = repoExpense.getAll();
 		
 			    
 	    //List<ExpenseEntity> expenseList = repoExpense.findByUserId(userId);
@@ -82,7 +84,6 @@ public class ExpenseController {
 	    // Add expense list to model
 	    model.addAttribute("expenseList", expenseList);	
 		//controller to jsp
-		model.addAttribute("expenseList", expenseList);//("dataname",datavalue)                               
 		return "listExpense"; //login jsp name
 	}
 	@GetMapping("viewExpense")

@@ -17,7 +17,7 @@
       
       <li class="nav-item">
         <a href="listIncome" class=" nav-link" >
-          <i class="ri-hand-coin-fill"></i><span>Income</span>
+          <i class="ri-hand-coin-fill"></i><span style={font-color:green}>Income</span>
         </a>
       </li>
       

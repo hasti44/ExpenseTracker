@@ -97,7 +97,7 @@
                 <div class="tab-pane fade profile-edit pt-3" id="profile-edit">
 
                   <!-- Profile Edit Form -->
-                  <form>
+                  <form action="editProfile" method="post">
                     <div class="row mb-3">
                       <label for="profileImage" class="col-md-4 col-lg-3 col-form-label">Profile Image</label>
                       <div class="col-md-8 col-lg-9">
@@ -131,9 +131,9 @@
                     </div>
 
                     <div class="row mb-3">
-                      <label for="Email" class="col-md-4 col-lg-3 col-form-label">Email</label>
+                      <label for="Email" class="col-md-4 col-lg-3 col-form-label" >Email</label>
                       <div class="col-md-8 col-lg-9">
-                        <input name="email" type="email" class="form-control" id="Email" value="${user.email }">
+                        <input name="email" type="email" class="form-control" id="Email" value="${user.email }" readonly>
                       </div>
                     </div>
 

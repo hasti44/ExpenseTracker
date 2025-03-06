@@ -66,6 +66,12 @@
 							<th>
 								<button>Account</button>
 							</th>
+							<th>
+								<button>Vender</button>
+							</th>
+							<th>
+								<button>User</button>
+							</th>
 							<th> 
 								<button>Action</button>
 							</th>
@@ -76,10 +82,12 @@
 							<tr>
 								<td>${i.expenseTitle }</td>
 								<td>${i.amount }</td>
-								<td>${i.categoryId }</td>
-								<td>${i.subCategoryId }</td>
+								<td>${i.categoryTitle }</td>
+								<td>${i.subCategoryTitle }</td>
 								<td>${i.transactionDate }</td>
-								<td>${i.accountId }</td>
+								<td>${i.accountTitle }</td>
+								<td>${i.venderTitle }</td>
+								<td>${i.firstName }</td>
 								<td><a href="viewExpense?expenseId=${i.expenseId}"> <i class=" bx bx-detail"></i> </a> | 	
 									<a href="deleteExpense?expenseId=${i.expenseId}"> <i class="ri-delete-bin-5-fill"></i> </a> |
 									<a href="editExpense?expenseId=${i.expenseId}"> <i class="bx bxs-edit-alt"></i> </a> </td>

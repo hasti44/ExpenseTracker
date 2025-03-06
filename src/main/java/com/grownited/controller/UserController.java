@@ -14,6 +14,9 @@ import org.springframework.web.bind.annotation.PostMapping;
 import com.grownited.entity.UserEntity;
 import com.grownited.repository.UserRepository;
 import com.grownited.service.MailService;
+
+import jakarta.servlet.http.HttpSession;
+
 import org.springframework.web.bind.annotation.RequestParam;
 
 
@@ -60,6 +63,12 @@ public class UserController {
 	}
 	@GetMapping("userprofile")
 	public String userprofile() {
+		return "userProfile";
+	}
+	@PostMapping("editProfile")
+	public String editProfile(HttpSession session, Model model) {
+		UserEntity user = (UserEntity)session.getAttribute("user");//Object
+		//repoUser.save(user);
 		return "userProfile";
 	}
 	

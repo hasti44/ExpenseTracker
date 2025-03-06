@@ -1,29 +1,29 @@
 package com.grownited.dto;
 
 public class IncomeDto {
-	Integer incomeId;
-	String incomeTitle;
-	float amount;
-	String transactionDate;
-	String description;
-	Integer accountId;
-	Integer userId;
-	String accountTitle;
-	String firstName;
+	private Integer incomeId;
+	private Integer accountId;
+	private float amount;
+	private String description;
+	private String incomeTitle;
+	private String transactionDate;
+	private Integer userId;
+	private String firstName;
+	private String accountTitle;
 	
 	
-	public IncomeDto(Integer incomeId, String incomeTitle, float amount, String transactionDate, String description,
-			Integer accountId, Integer userId, String accountTitle, String firstName) {
-		
+	public IncomeDto(Integer incomeId, Integer accountId, float amount, String description, String incomeTitle,
+			String transactionDate, Integer userId, String firstName, String accountTitle) {
+		super();
 		this.incomeId = incomeId;
-		this.incomeTitle = incomeTitle;
-		this.amount = amount;
-		this.transactionDate = transactionDate;
-		this.description = description;
 		this.accountId = accountId;
+		this.amount = amount;
+		this.description = description;
+		this.incomeTitle = incomeTitle;
+		this.transactionDate = transactionDate;
 		this.userId = userId;
-		this.accountTitle = accountTitle;
 		this.firstName = firstName;
+		this.accountTitle = accountTitle;
 	}
 	public Integer getIncomeId() {
 		return incomeId;

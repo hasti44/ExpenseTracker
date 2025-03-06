@@ -51,6 +51,9 @@
 							<th>
 								<button>Title</button>
 							</th>
+							<th>
+								<button>User Name</button>
+							</th>
 							<th> 
 								<button>Action</button>
 							</th>
@@ -60,6 +63,7 @@
 						<c:forEach items="${venderList}" var="i">
 							<tr data-index="i">
 								<td>${i.venderTitle }</td>
+								<td>${i.firstName }</td>
 								<td><a href="viewVender?venderId=${i.venderId}"> <i class=" bx bx-detail"></i> </a> | 	
 									<a href="deleteVender?venderId=${i.venderId}"> <i class="ri-delete-bin-5-fill"></i> </a> |
 									<a href="editVender?venderId=${i.venderId}"> <i class="bx bxs-edit-alt"></i> </a> </td>

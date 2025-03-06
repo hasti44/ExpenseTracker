@@ -1,10 +1,10 @@
 package com.grownited.dto;
 
 public class CategoryDto {
-	Integer categoryId;
-	String categoryTitle;
-	Integer userId;
-	String firstName;
+	private Integer categoryId;
+	private String categoryTitle;
+	private Integer userId;
+	private String firstName;
 	public CategoryDto(Integer categoryId, String categoryTitle, Integer userId, String firstName) {
 		
 		this.categoryId = categoryId;

@@ -1,18 +1,20 @@
 package com.grownited.dto;
 
 public class SubCategoryDto {
-	Integer subCategoryId;
-	String subCategoryTitle;
-	Integer categoryId;
-	Integer userId;
-	String categoryTitle;
-	String firstName;
-	public SubCategoryDto(Integer subCategoryId, String subCategoryTitle, Integer categoryId, Integer userId,
-			String categoryTitle, String firstName) {
+	private Integer subCategoryId;
+	private Integer categoryId;
+	private String subCategoryTitle;
+	private Integer userId;
+	private String categoryTitle;
+	private String firstName;
 	
+	
+	public SubCategoryDto(Integer subCategoryId, Integer categoryId, String subCategoryTitle, Integer userId,
+			String categoryTitle, String firstName) {
+		super();
 		this.subCategoryId = subCategoryId;
-		this.subCategoryTitle = subCategoryTitle;
 		this.categoryId = categoryId;
+		this.subCategoryTitle = subCategoryTitle;
 		this.userId = userId;
 		this.categoryTitle = categoryTitle;
 		this.firstName = firstName;
