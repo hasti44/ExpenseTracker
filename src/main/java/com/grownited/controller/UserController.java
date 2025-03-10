@@ -61,10 +61,12 @@ public class UserController {
 		model.addAttribute("userList", userList);//("dataname",datavalue)
 		return "listUser";
 	}
+	
 	@GetMapping("userprofile")
 	public String userprofile() {
 		return "userProfile";
 	}
+	
 	@PostMapping("editProfile")
 	public String editProfile(HttpSession session, Model model) {
 		UserEntity user = (UserEntity)session.getAttribute("user");//Object

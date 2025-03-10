@@ -1,5 +1,7 @@
 package com.grownited.controller;
 
+import java.util.Arrays;
+import java.util.List;
 import java.util.Optional;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -11,7 +13,9 @@ import org.springframework.web.bind.annotation.PostMapping;
 //import org.springframework.web.bind.annotation.RequestParam;
 //import org.springframework.web.bind.annotation.RequestBody;
 
+import com.grownited.dto.ExpenseDto; 
 import com.grownited.entity.UserEntity;
+import com.grownited.repository.ExpenseRepository;
 import com.grownited.repository.UserRepository;
 import com.grownited.service.MailService;
 
@@ -22,6 +26,8 @@ public class SessionController {
 	
 	@Autowired
 	UserRepository repoUser; 
+	@Autowired
+	ExpenseRepository repoExpense; 
 	@Autowired
 	MailService serviceMail;
 	@Autowired 
@@ -131,6 +137,8 @@ public class SessionController {
 			if(ans == true) {
 				if(user.getRole().equals("USER")) {
 					session.setAttribute("user", user);
+					List<Object[]> expenseData = repoExpense.getExpenseChartDetail(user.getUserId());
+				    model.addAttribute("expenseData", expenseData);
 					return "redirect:/userHome";
 				}
 				else if(user.getRole().equals("ADMIN")) {

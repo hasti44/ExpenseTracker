@@ -17,10 +17,10 @@ public class ExpenseEntity {
 	private Integer venderId;
 	private Integer accountId;
 	//status
-	float amount;
-	String description;
+	private float amount;
+	private String description;
 	private String transactionDate;
-	Integer userId;
+	private Integer userId;
 
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)

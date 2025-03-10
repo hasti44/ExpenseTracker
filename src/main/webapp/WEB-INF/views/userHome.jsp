@@ -1,4 +1,5 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -18,8 +19,7 @@
     <jsp:include page="common/sidebar.jsp"></jsp:include> 
 
   <main id="main" class="main">
-
-    <div class="pagetitle">
+	<div class="pagetitle">
       <h1>Dashboard</h1>
     </div><!-- End Page Title -->
 
@@ -129,66 +129,68 @@
             <div class="card-body pb-0">
               <h5 class="card-title">Expanse Chart <span>| Today</span></h5>
 
-              <div id="expenseChart" style="min-height: 400px; user-select: none; -webkit-tap-highlight-color: rgba(0, 0, 0, 0); position: relative;" class="echart" _echarts_instance_="ec_1741175800429"><div style="position: relative; width: 254px; height: 400px; padding: 0px; margin: 0px; border-width: 0px;"><canvas data-zr-dom-id="zr_0" width="508" height="800" style="position: absolute; left: 0px; top: 0px; width: 254px; height: 400px; user-select: none; -webkit-tap-highlight-color: rgba(0, 0, 0, 0); padding: 0px; margin: 0px; border-width: 0px;"></canvas></div><div class=""></div></div>
+              <div id="expenseChart" style="min-height: 400px; user-select: none; -webkit-tap-highlight-color: rgba(0, 0, 0, 0); position: relative;" class="echart" _echarts_instance_="ec_1741175800429">
+              	<div style="position: relative; width: 254px; height: 400px; padding: 0px; margin: 0px; border-width: 0px;"><canvas data-zr-dom-id="zr_0" width="508" height="800" style="position: absolute; left: 0px; top: 0px; width: 254px; height: 400px; user-select: none; -webkit-tap-highlight-color: rgba(0, 0, 0, 0); padding: 0px; margin: 0px; border-width: 0px;"></canvas></div>
+              	<div class=""></div></div>
 
-              <script>
-                document.addEventListener("DOMContentLoaded", () => {
-                  echarts.init(document.querySelector("#expenseChart")).setOption({
-                    tooltip: {
-                      trigger: 'item',
-                      formatter: '{b}: {c} ({d}%)' // Show percentage on hover
-                    },
-                    legend: {
-                      top: '5%',
-                      left: 'center'
-                    },
-                    series: [{
-                      name: 'Expense From',
-                      type: 'pie',
-                      radius: ['40%', '70%'],
-                      avoidLabelOverlap: false,
-                      label: {
-                        show: false,
-                        position: 'center'
-                      },
-                      emphasis: {
-                        label: {
-                          show: true,
-                          fontSize: '18',
-                          fontWeight: 'bold'
-                        }
-                      },
-                      labelLine: {
-                        show: false
-                      },
-                      data: [{
-                          value: 1048,
-                          name: 'Search Engine'
-                        },
-                        {
-                          value: 735,
-                          name: 'Direct'
-                        },
-                        {
-                          value: 580,
-                          name: 'Email'
-                        },
-                        {
-                          value: 484,
-                          name: 'Union Ads'
-                        },
-                        {
-                          value: 300,
-                          name: 'Video Ads'
-                        }
-                      ]
-                    }]
-                  });
-                });
-              </script>
+	              <script>
+	                document.addEventListener("DOMContentLoaded", () => {
+	                  echarts.init(document.querySelector("#expenseChart")).setOption({
+	                    tooltip: {
+	                      trigger: 'item',
+	                      formatter: '{b}: {c} ({d}%)' // Show percentage on hover
+	                    },
+	                    legend: {
+	                      top: '5%',
+	                      left: 'center'
+	                    },
+	                    series: [{
+	                      name: 'Expense From',
+	                      type: 'pie',
+	                      radius: ['40%', '70%'],
+	                      avoidLabelOverlap: false,
+	                      label: {
+	                        show: false,
+	                        position: 'center'
+	                      },
+	                      emphasis: {
+	                        label: {
+	                          show: true,
+	                          fontSize: '18',
+	                          fontWeight: 'bold'
+	                        }
+	                      },
+	                      labelLine: {
+	                        show: false
+	                      },
+	                      data: [{
+	                          value: 1048,
+	                          name: 'Search Engine'
+	                        },
+	                        {
+	                          value: 735,
+	                          name: 'Direct'
+	                        },
+	                        {
+	                          value: 580,
+	                          name: 'Email'
+	                        },
+	                        {
+	                          value: 484,
+	                          name: 'Union Ads'
+	                        },
+	                        {
+	                          value: 300,
+	                          name: 'Video Ads'
+	                        }
+	                      ]
+	                    }]
+	                  });
+	                });
+	              </script>
 
-            </div>
-          </div>
+            	</div>
+      		   </div>
             </div><!-- End expense chart -->
         </div>
     </section>
